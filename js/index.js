@@ -7,8 +7,8 @@ $(document).ready(function () {
 function getNextVideo() {
   const videoList = [
     // https://www.youtube.com/@EnglishSpeeches
-    "fBnAMUkNM2k", // ENGLISH SPEECH | MUNIBA MAZARI - We all are Perfectly Imperfect (English Subtitles)
     // Learn English with Speeches
+    "fBnAMUkNM2k", // ENGLISH SPEECH | MUNIBA MAZARI - We all are Perfectly Imperfect (English Subtitles)
     // https://www.youtube.com/@easylanguages
     // Easy Spanish Podcast - 01
     // Spanish from Argentina - 02
