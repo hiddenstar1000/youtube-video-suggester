@@ -1,2 +1,2 @@
-# youtube-playlist-manager
-Youtube Playlist Manager
+# youtube-video-suggester
+Youtube Video Suggester
