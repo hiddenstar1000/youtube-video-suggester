@@ -17,6 +17,8 @@ function loadNextVideo() {
     "1i9kcBHX2Nw", // ENGLISH SPEECH | STEVE JOBS: Stanford Speech(English Subtitles)
     "iBBB-vJZB50", // ENGLISH SPEECH | MALALA YOUSAFZAI - Nobel Peace Prize (English Subtitles)
     "jG-4kBIDAzA", // ENGLISH SPEECH | SELENA GOMEZ: Trust Yourself (English Subtitles)
+    "r01DOmPpxjg", // ENGLISH SPEECH | MUNIBA MAZARI: Motivational Words (English Subtitles)
+    "nIwU-9ZTTJc", // ENGLISH SPEECH | EMMA WATSON: Gender Equality (English Subtitles)
     // https://www.youtube.com/@easylanguages
     // Easy Spanish Podcast - 01
     // Spanish from Argentina - 02
