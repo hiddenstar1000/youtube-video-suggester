@@ -61,8 +61,8 @@ function loadNextVideo() {
     // Super Easy Spanish - Spanish for Beginners - 09
   ];
 
-  if (languages.english) videoList.concat(englishVideoList);
-  if (languages.spanish) videoList.concat(spanishVideoList);
+  if (languages.english) videoList = videoList.concat(englishVideoList);
+  if (languages.spanish) videoList = videoList.concat(spanishVideoList);
 
   const index = Math.floor(Math.random() * videoList.length);
 
