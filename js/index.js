@@ -1,19 +1,30 @@
 $(document).ready(function () {
-  loadNextVideo();
+  const languages = JSON.parse(localStorage.getItem("languages")) || {
+    english: true,
+    spanish: true,
+  };
+
+  $("#english").attr("checked", languages.english);
+  $("#spanish").attr("checked", languages.spanish);
+
+  loadNextVideo(languages);
 
   $("body").keypress(function (e) {
     const ENTER_KEY = 13;
 
     if (e.which === ENTER_KEY) loadNextVideo();
   });
+
+  $(".languages").click(function () {
+    const languages = {
+      english: $("#english").is(":checked"),
+      spanish: $("#spanish").is(":checked"),
+    };
+    loadNextVideo(languages);
+  });
 });
 
-function loadNextVideo() {
-  const languages = {
-    english: true,
-    spanish: true,
-  };
-
+function loadNextVideo(languages) {
   localStorage.setItem("languages", JSON.stringify(languages));
 
   let videoList = [];
