@@ -9,7 +9,16 @@ $(document).ready(function () {
 });
 
 function loadNextVideo() {
-  const videoList = [
+  const languages = {
+    english: true,
+    spanish: true,
+  };
+
+  localStorage.setItem("languages", JSON.stringify(languages));
+
+  let videoList = [];
+
+  const englishVideoList = [
     // https://www.youtube.com/@EnglishSpeeches
     // Learn English with Speeches
     "fBnAMUkNM2k", // ENGLISH SPEECH | MUNIBA MAZARI - We all are Perfectly Imperfect (English Subtitles) - 001
@@ -22,6 +31,14 @@ function loadNextVideo() {
     "aDG1T0kJnd4", // ENGLISH SPEECH | PRIYANKA CHOPRA: Be Fearless (English Subtitles) - 008
     "_nUDuXRh3zM", // ENGLISH SPEECH | IVANKA TRUMP: Think Big Again (English Subtitles) - 009
     "_POoaOQ2Xuc", // ENGLISH SPEECH | PRIYANKA CHOPRA: Full Power of Women (English Subtitles) - 010
+    "EQYWOQ-12c8", // ENGLISH SPEECH | RASHMIKA MANDANNA: Dream BIG! (English Subtitles) - 011
+    "U8iy5zvXhJc", // ENGLISH SPEECH | SHAKIRA: Education Changes the World (English Subtitles) - 012
+    "2mqQMA7CSLQ", // ENGLISH SPEECH | DONALD TRUMP: Never, Ever Give Up (English Subtitles) - 013
+    "mK53d6aIG48", // ENGLISH SPEECH | R. MADHAVAN: India in 2030 (English Subtitles) - 014
+    "KLe7Rxkrj94", // ENGLISH SPEECH | THE ROCK: Be Yourself (English Subtitles) - 015
+  ];
+
+  const spanishVideoList = [
     // https://www.youtube.com/@easylanguages
     // Easy Spanish Podcast - 01
     // Spanish from Argentina - 02
@@ -43,6 +60,10 @@ function loadNextVideo() {
     "3QKtKxaAZ6o", // In the Mexican Subway | Easy Spanish 10
     // Super Easy Spanish - Spanish for Beginners - 09
   ];
+
+  if (languages.english) videoList.concat(englishVideoList);
+  if (languages.spanish) videoList.concat(spanishVideoList);
+
   const index = Math.floor(Math.random() * videoList.length);
 
   $("#videoIframe").attr(
