@@ -9,17 +9,12 @@ $(document).ready(function () {
 
   loadNextVideo(languages);
 
-  $("body").keypress(function (e) {
-    const ENTER_KEY = 13;
-
-    if (e.which === ENTER_KEY) loadNextVideo();
-  });
-
   $(".languages").click(function () {
     const languages = {
       english: $("#english").is(":checked"),
       spanish: $("#spanish").is(":checked"),
     };
+
     loadNextVideo(languages);
   });
 });
