@@ -45,7 +45,7 @@ function loadNextVideo(languages) {
   ];
 
   const spanishVideoList = [
-    // https://www.youtube.com/@easylanguages
+    // https://www.youtube.com/@EasySpanish
     // Easy Spanish Podcast - 01
     // Spanish from Argentina - 02
     // International episodes - 03
@@ -64,6 +64,11 @@ function loadNextVideo(languages) {
     "6Pfm-y40NcU", // London | Easy Spanish 8
     "GBbHQv4FxmQ", // Is global warming real? | Easy Spanish 9
     "3QKtKxaAZ6o", // In the Mexican Subway | Easy Spanish 10
+    "tEJHoAMKMvQ", // Mexico : Croatia (FIFA World Cup 2014) | Easy Spanish 11
+    "JvaqRQswHl4", // How did new technologies influence your life? | Easy Spanish 12
+    "M3en0xK1XCk", // Mexican Bread | Easy Spanish 13
+    "7GyCg4N6Q-4", // Machu Picchu | Easy Spanish 14
+    "cx8LpiW174g", // What did you dream last night? | Easy Spanish 15
     // Super Easy Spanish - Spanish for Beginners - 09
   ];
 
