@@ -4,8 +4,8 @@ $(document).ready(function () {
     spanish: true,
   };
 
-  $("#english").attr("checked", languages.english);
-  $("#spanish").attr("checked", languages.spanish);
+  $("#english").prop("checked", languages.english);
+  $("#spanish").prop("checked", languages.spanish);
 
   loadNextVideo(languages);
 
@@ -14,6 +14,16 @@ $(document).ready(function () {
       english: $("#english").is(":checked"),
       spanish: $("#spanish").is(":checked"),
     };
+
+    if (!languages.english && !languages.spanish) {
+      if ($(this).attr("id") === "english") {
+        languages.spanish = true;
+        $("#spanish").prop("checked", true);
+      } else {
+        languages.english = true;
+        $("#english").prop("checked", true);
+      }
+    }
 
     loadNextVideo(languages);
   });
