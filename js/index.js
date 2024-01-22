@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  updatePlaylists();
+
   const languages = JSON.parse(localStorage.getItem("languages")) || {
     english: true,
     spanish: true,
@@ -31,7 +33,16 @@ $(document).ready(function () {
 
 function loadNextVideo(languages) {
   localStorage.setItem("languages", JSON.stringify(languages));
+  const videoList = loadPlaylists();
+  const index = Math.floor(Math.random() * videoList.length);
 
+  $("#videoIframe").attr(
+    "src",
+    `https://www.youtube.com/embed/${videoList[index]}`
+  );
+}
+
+function loadPlaylists() {
   let videoList = [];
 
   const englishVideoList = [
@@ -77,10 +88,10 @@ function loadNextVideo(languages) {
   if (languages.english) videoList = videoList.concat(englishVideoList);
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
 
-  const index = Math.floor(Math.random() * videoList.length);
+  return videoList;
+}
 
-  $("#videoIframe").attr(
-    "src",
-    `https://www.youtube.com/embed/${videoList[index]}`
-  );
+function updatePlaylists() {
+  // https://developers.google.com/youtube/v3/docs/playlistItems/list
+  // GET https://www.googleapis.com/youtube/v3/playlistItems
 }
