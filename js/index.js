@@ -1,6 +1,4 @@
 $(document).ready(function () {
-  updatePlaylists();
-
   const languages = JSON.parse(localStorage.getItem("languages")) || {
     english: true,
     spanish: true,
@@ -89,9 +87,4 @@ function loadPlaylists(languages) {
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
 
   return videoList;
-}
-
-function updatePlaylists() {
-  // https://developers.google.com/youtube/v3/docs/playlistItems/list
-  // GET https://www.googleapis.com/youtube/v3/playlistItems
 }
