@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 function loadNextVideo(languages) {
   localStorage.setItem("languages", JSON.stringify(languages));
-  const videoList = loadPlaylists();
+  const videoList = loadPlaylists(languages);
   const index = Math.floor(Math.random() * videoList.length);
 
   $("#videoIframe").attr(
@@ -42,7 +42,7 @@ function loadNextVideo(languages) {
   );
 }
 
-function loadPlaylists() {
+function loadPlaylists(languages) {
   let videoList = [];
 
   const englishVideoList = [
