@@ -61,6 +61,16 @@ function loadPlaylists(languages) {
     "2mqQMA7CSLQ", // ENGLISH SPEECH | DONALD TRUMP: Never, Ever Give Up (English Subtitles) - 13
     "mK53d6aIG48", // ENGLISH SPEECH | R. MADHAVAN: India in 2030 (English Subtitles) - 14
     "KLe7Rxkrj94", // ENGLISH SPEECH | THE ROCK: Be Yourself (English Subtitles) - 15
+    "MvJSyU_zuLY", // ENGLISH SPEECH | BTS: Speak Yourself (English Subtitles) - 16
+    "gkr57P0fwbI", // ENGLISH SPEECH | ANNE HATHAWAY: Paid Family Leave (English Subtitles) - 17
+    "Hq7a4qvYQqI", // ENGLISH SPEECH | AAMIR KHAN: For a Better India (English Subtitles) - 18
+    "_S955fkSZd8", // ENGLISH SPEECH | SHASHI THAROOR: Britain owes reparations to India (English Subtitles) - 19
+    "KMEe2ni92rQ", // ENGLISH SPEECH | BILL GATES: Harvard Commencement Address (English Subtitles) - 20
+    "ksZpu1s1LV0", // ENGLISH SPEECH | MARK ZUCKERBERG: Find Your Purpose (English Subtitles) - 21
+    "BZ7v0wVrKDo", // ENGLISH SPEECH | SHAH RUKH KHAN: Freedom to Be Yourself (English Subtitles) - 22
+    "46yStqMV4eY", // ENGLISH SPEECH | HILLARY CLINTON: Be Resilient (English Subtitles) - 23
+    "2rmRzAdLgWk", // ENGLISH SPEECH | SAI PALLAVI: The Best of Sai Pallavi (English Subtitles) - 24
+    "SZR2nVKkcuI", // ENGLISH SPEECH | THERESA MAY: Britain, the Great Meritocracy (English Subtitles) - 25
   ];
 
   const spanishVideoList = [
@@ -81,6 +91,15 @@ function loadPlaylists(languages) {
     "M3en0xK1XCk", // Mexican Bread | Easy Spanish 13
     "7GyCg4N6Q-4", // Machu Picchu | Easy Spanish 14
     "cx8LpiW174g", // What did you dream last night? | Easy Spanish 15
+    "pcgLACpVjxk", // At the Lima Book Festival - Part I | Easy Spanish 16
+    "MFPfyLz-46w", // At the Lima Book Festival (Part II) | Easy Spanish 17
+    "ATTlzREF7gI", // Book or Movie? | Easy Spanish 18
+    "4AY4OziyqyI", // Human Trafficking | Easy Spanish 19
+    "CDt3KibDszk", // Barranco (I) | Easy Spanish 20
+    "naENh3lLoDg", // Barranco (II) | Easy Spanish 21
+    "QgedeMGTh5E", // Ciclonudista | Easy Spanish 22
+    "ecsatgCN6Y8", // Chorrillos | Easy Spanish 23
+    "SCuNIIVOqdY", // Medellín | Easy Spanish 25
   ];
 
   if (languages.english) videoList = videoList.concat(englishVideoList);
