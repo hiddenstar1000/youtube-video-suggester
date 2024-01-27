@@ -99,11 +99,15 @@ function loadPlaylists(languages) {
     "naENh3lLoDg", // Barranco (II) | Easy Spanish 21
     "QgedeMGTh5E", // Ciclonudista | Easy Spanish 22
     "ecsatgCN6Y8", // Chorrillos | Easy Spanish 23
+    "4xGwNEhH8jM", // What if you had Super Powers? | Easy Spanish 24
     "SCuNIIVOqdY", // Medellín | Easy Spanish 25
   ];
 
   if (languages.english) videoList = videoList.concat(englishVideoList);
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
+
+  $("#englishCount").html(englishVideoList.length);
+  $("#spanishCount").html(spanishVideoList.length);
 
   return videoList;
 }

@@ -26,16 +26,41 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="dx-container">
-        <iframe id="videoIframe" class="dx-responsive-iframe" src="#"></iframe>
+      <div class="row">
+        <div class="col dx-container">
+          <iframe
+            id="videoIframe"
+            class="dx-responsive-iframe"
+            src="#"
+          ></iframe>
+        </div>
       </div>
-      <div>
-        <form>
-          <label for="english">English:</label>
-          <input id="english" type="checkbox" class="languages" />
-          <label for="spanish">Spanish:</label>
-          <input id="spanish" type="checkbox" class="languages" />
-        </form>
+      <div class="row">
+        <div class="col-1">
+          <button type="button" class="btn btn-primary position-relative">
+            <label for="english">English:</label>
+            <input id="english" type="checkbox" class="languages" />
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              <span id="englishCount"></span>
+              <span class="visually-hidden">english count</span>
+            </span>
+          </button>
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-primary position-relative">
+            <label for="spanish">Spanish:</label>
+            <input id="spanish" type="checkbox" class="languages" />
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              <span id="spanishCount"></span>
+              <span class="visually-hidden">spanish count</span>
+            </span>
+          </button>
+        </div>
+        <div class="col-10"></div>
       </div>
     </div>
   </body>
