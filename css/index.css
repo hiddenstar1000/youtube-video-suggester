@@ -1,4 +1,4 @@
-.container {
+.dx-container {
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -6,7 +6,7 @@
   }
 
   /* Then style the iframe to fit in the container div with full height and width */
-  .responsive-iframe {
+  .dx-responsive-iframe {
     position: absolute;
     top: 0;
     left: 0;
