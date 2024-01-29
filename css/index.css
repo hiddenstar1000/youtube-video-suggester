@@ -17,6 +17,10 @@
   }
 
 
-  body{
+  body {
     background-color: #557cd2;
   }
+
+  .dx-pointer {
+    cursor: pointer !important;
+  } 
