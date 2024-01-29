@@ -27,6 +27,14 @@ $(document).ready(function () {
 
     loadNextVideo(languages);
   });
+
+  $("#englishCountBadge").click(function () {
+    $("#english").trigger("click");
+  });
+
+  $("#spanishCountBadge").click(function () {
+    $("#spanish").trigger("click");
+  });
 });
 
 function loadNextVideo(languages) {
