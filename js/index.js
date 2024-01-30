@@ -36,6 +36,14 @@ $(document).ready(function () {
     $("#spanish").trigger("click");
   });
 
+  $("#remove").click(function () {
+    removeVideo();
+  });
+
+  $("#reset").click(function () {
+    resetToDefault();
+  });
+
   $("#next").click(function () {
     loadNextVideo(languages);
   });
@@ -48,6 +56,15 @@ function loadNextVideo(languages) {
   const video = videoList[index];
 
   $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
+}
+
+function resetToDefault() {
+  localStorage.removeItem("languages");
+  location.reload();
+}
+
+function removeVideo() {
+  console.log("removeVideo");
 }
 
 function loadPlaylists(languages) {
