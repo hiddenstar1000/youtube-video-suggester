@@ -35,6 +35,10 @@ $(document).ready(function () {
   $("#spanishCountBadge").click(function () {
     $("#spanish").trigger("click");
   });
+
+  $("#next").click(function () {
+    loadNextVideo(languages);
+  });
 });
 
 function loadNextVideo(languages) {
