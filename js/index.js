@@ -75,9 +75,9 @@ function removeVideo(video) {
   };
 
   if (video.ln === "english") {
-    removedList.english.push(video);
+    removedList.english.push(video.index);
   } else if (video.ln === "spanish") {
-    removedList.spanish.push(video);
+    removedList.spanish.push(video.index);
   }
 
   localStorage.setItem("removedList", JSON.stringify(removedList));
@@ -151,14 +151,14 @@ function loadPlaylists(languages) {
   ];
 
   if (removedList.english.length > 0) {
-    removedList.english.forEach((video) => {
-      englishVideoList.splice(video.index, 1);
+    removedList.english.forEach((index) => {
+      englishVideoList.splice(index, 1);
     });
   }
 
   if (removedList.spanish.length > 0) {
-    removedList.spanish.forEach((video) => {
-      spanishVideoList.splice(video.index, 1);
+    removedList.spanish.forEach((index) => {
+      spanishVideoList.splice(index, 1);
     });
   }
 
