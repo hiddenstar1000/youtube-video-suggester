@@ -118,6 +118,8 @@ function loadPlaylists(languages) {
     { index: 22, id: "46yStqMV4eY", ln: "english" }, // ENGLISH SPEECH | HILLARY CLINTON: Be Resilient (English Subtitles) - 23
     { index: 23, id: "2rmRzAdLgWk", ln: "english" }, // ENGLISH SPEECH | SAI PALLAVI: The Best of Sai Pallavi (English Subtitles) - 24
     { index: 24, id: "SZR2nVKkcuI", ln: "english" }, // ENGLISH SPEECH | THERESA MAY: Britain, the Great Meritocracy (English Subtitles) - 25
+    { index: 25, id: "bz7yYu_w2HY", ln: "english" }, // ENGLISH SPEECH | ELON MUSK: Future, A.I. and Mars (English Subtitles) - 26
+    { index: 26, id: "6dKimoybmEo", ln: "english" }, // ENGLISH SPEECH | MARTIN LUTHER KING: I Have a Dream (English Subtitles) - 27
   ];
 
   const spanishVideoList = [
@@ -148,6 +150,8 @@ function loadPlaylists(languages) {
     { index: 22, id: "ecsatgCN6Y8", ln: "spanish" }, // Chorrillos | Easy Spanish 23
     { index: 23, id: "4xGwNEhH8jM", ln: "spanish" }, // What if you had Super Powers? | Easy Spanish 24
     { index: 24, id: "SCuNIIVOqdY", ln: "spanish" }, // Medellín | Easy Spanish 25
+    { index: 25, id: "by7hNcJamYI", ln: "spanish" }, // Favorite Destinations | Easy Spanish 26
+    { index: 26, id: "UQna4-urlbw", ln: "spanish" }, // Weather in Monterrey | Easy Spanish 27
   ];
 
   if (removedList.english.length > 0) {
