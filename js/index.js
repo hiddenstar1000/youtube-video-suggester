@@ -120,6 +120,9 @@ function loadPlaylists(languages) {
     { index: 24, id: "SZR2nVKkcuI", ln: "english" }, // ENGLISH SPEECH | THERESA MAY: Britain, the Great Meritocracy (English Subtitles) - 25
     { index: 25, id: "bz7yYu_w2HY", ln: "english" }, // ENGLISH SPEECH | ELON MUSK: Future, A.I. and Mars (English Subtitles) - 26
     { index: 26, id: "6dKimoybmEo", ln: "english" }, // ENGLISH SPEECH | MARTIN LUTHER KING: I Have a Dream (English Subtitles) - 27
+    { index: 27, id: "jkZizIN5aEg", ln: "english" }, // ENGLISH SPEECH | NICK VUJICIC: How to Stop A Bully (English Subtitles) - 28
+    { index: 28, id: "pdYwZhCAeB0", ln: "english" }, // ENGLISH SPEECH | MS DHONI: Be Honest & Take Risks (English Subtitles) - 29
+    { index: 29, id: "S1dNuCG3sOA", ln: "english" }, // ENGLISH SPEECH | BARACK OBAMA: The People of India (English Subtitles) - 30
   ];
 
   const spanishVideoList = [
