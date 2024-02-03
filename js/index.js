@@ -155,6 +155,9 @@ function loadPlaylists(languages) {
     { index: 24, id: "SCuNIIVOqdY", ln: "spanish" }, // Medellín | Easy Spanish 25
     { index: 25, id: "by7hNcJamYI", ln: "spanish" }, // Favorite Destinations | Easy Spanish 26
     { index: 26, id: "UQna4-urlbw", ln: "spanish" }, // Weather in Monterrey | Easy Spanish 27
+    { index: 27, id: "VhAiG4vUUXY", ln: "spanish" }, // Childhood Memories | Easy Spanish 28
+    { index: 28, id: "XcS-qKBm7UE", ln: "spanish" }, // What did you want to be as a kid? | Easy Spanish 29
+    { index: 29, id: "oPX0fYpSTMI", ln: "spanish" }, // Christmas in Mexico City | Easy Spanish 30
   ];
 
   if (removedList.english.length > 0) {
