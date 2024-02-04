@@ -8,8 +8,9 @@
     "minify": "^11.0.1"
   },
   "scripts": {
+    "build-css": "minify css/index.css > css/index.min.css",
     "build-js": "minify js/index.js > js/index.min.js",
-    "build-css": "minify css/index.css > css/index.min.css"
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
