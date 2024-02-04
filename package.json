@@ -4,10 +4,12 @@
   "description": "Youtube Video Suggester",
   "main": "index.js",
   "devDependencies": {
+    "husky": "^9.0.10",
     "minify": "^11.0.1"
   },
   "scripts": {
-    "build": "minify 'js/index.js' > 'js/index.min.js'"
+    "build-js": "minify js/index.js > js/index.min.js",
+    "build-css": "minify css/index.css > css/index.min.css"
   },
   "repository": {
     "type": "git",
