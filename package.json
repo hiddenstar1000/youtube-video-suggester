@@ -1,0 +1,22 @@
+{
+  "name": "youtube-video-suggester",
+  "version": "1.0.0",
+  "description": "Youtube Video Suggester",
+  "main": "index.js",
+  "devDependencies": {
+    "minify": "^11.0.1"
+  },
+  "scripts": {
+    "build": "minify 'js/index.js' > 'js/index.min.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiddenstar1000/youtube-video-suggester.git"
+  },
+  "author": "Dixon Gunasekara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiddenstar1000/youtube-video-suggester/issues"
+  },
+  "homepage": "https://github.com/hiddenstar1000/youtube-video-suggester#readme"
+}
