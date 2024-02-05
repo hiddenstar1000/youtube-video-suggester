@@ -60,6 +60,7 @@ function loadNextVideo(languages) {
   $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
   $("#videoIndex").val(video.index);
   $("#language").val(video.ln);
+  console.log(`Next:${video.index}:${video.ln}:${video.id}`);
 }
 
 function resetToDefault() {
@@ -5250,6 +5251,7 @@ function loadData() {
       id: item.contentDetails.videoId,
       ln: "english",
     });
+    console.log(`${i}:english:${item.contentDetails.videoId}`);
   });
 
   i = 0;
@@ -5259,6 +5261,7 @@ function loadData() {
       id: item.contentDetails.videoId,
       ln: "spanish",
     });
+    console.log(`${i}:spanish:${item.contentDetails.videoId}`);
   });
 
   return data;
