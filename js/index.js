@@ -54,6 +54,7 @@ $(document).ready(function () {
 function loadNextVideo(languages) {
   localStorage.setItem("languages", JSON.stringify(languages));
   const videoList = loadPlaylists(languages);
+  console.log(`videoList.length:${videoList.length}`);
   const index = Math.floor(Math.random() * videoList.length);
   const video = videoList[index];
 
