@@ -56,7 +56,7 @@ function loadNextVideo(languages) {
   const videoList = loadPlaylists(languages);
   const numberOfVideos = videoList.length;
   const randomNumber = Math.random();
-  const nextIndex = Math.floor(randomNumber * numberOfVideos);
+  const nextIndex = `${randomNumber * numberOfVideos}`.split(".")[0];
   console.log(
     `numberOfVideos:${numberOfVideos}, randomNumber:${randomNumber}, nextIndex:${nextIndex}`
   );
@@ -65,7 +65,6 @@ function loadNextVideo(languages) {
   $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
   $("#videoIndex").val(video.index);
   $("#language").val(video.ln);
-  console.log(`Next:${video.index}:${video.ln}:${video.id}`);
 }
 
 function resetToDefault() {
@@ -5256,7 +5255,6 @@ function loadData() {
       id: item.contentDetails.videoId,
       ln: "english",
     });
-    console.log(`${i}:english:${item.contentDetails.videoId}`);
     i++;
   });
 
@@ -5267,7 +5265,6 @@ function loadData() {
       id: item.contentDetails.videoId,
       ln: "spanish",
     });
-    console.log(`${i}:spanish:${item.contentDetails.videoId}`);
     i++;
   });
 
