@@ -5247,21 +5247,23 @@ function loadData() {
   let i = 0;
   englishData.forEach((item) => {
     data.englishVideoList.push({
-      index: i++,
+      index: i,
       id: item.contentDetails.videoId,
       ln: "english",
     });
     console.log(`${i}:english:${item.contentDetails.videoId}`);
+    i++;
   });
 
   i = 0;
   spanishData.forEach((item) => {
     data.spanishVideoList.push({
-      index: i++,
+      index: i,
       id: item.contentDetails.videoId,
       ln: "spanish",
     });
     console.log(`${i}:spanish:${item.contentDetails.videoId}`);
+    i++;
   });
 
   return data;
