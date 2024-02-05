@@ -54,9 +54,13 @@ $(document).ready(function () {
 function loadNextVideo(languages) {
   localStorage.setItem("languages", JSON.stringify(languages));
   const videoList = loadPlaylists(languages);
-  console.log(`videoList.length:${videoList.length}`);
-  const index = Math.floor(Math.random() * videoList.length);
-  const video = videoList[index];
+  const numberOfVideos = videoList.length;
+  const randomNumber = Math.random();
+  const nextIndex = Math.floor(randomNumber * numberOfVideos);
+  console.log(
+    `numberOfVideos:${numberOfVideos}, randomNumber:${randomNumber}, nextIndex:${nextIndex}`
+  );
+  const video = videoList[nextIndex];
 
   $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
   $("#videoIndex").val(video.index);
