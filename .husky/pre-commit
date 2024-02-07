@@ -1,4 +1,6 @@
 npm run build-css
 npm run build-js
+npm run build-css-ts
+npm run build-js-ts
 git add *.min.js
 git add *.min.css
