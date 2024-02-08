@@ -1,35 +1,35 @@
 $(document).ready(function () {
-  const languages = JSON.parse(localStorage.getItem("languages")) || {
-    english: true,
+  const languages = JSON.parse(localStorage.getItem("languagesTs")) || {
+    hindi: true,
     spanish: true,
   };
 
-  $("#english").prop("checked", languages.english);
+  $("#hindi").prop("checked", languages.hindi);
   $("#spanish").prop("checked", languages.spanish);
 
   loadNextVideo(languages);
 
   $(".languages").click(function () {
     const languages = {
-      english: $("#english").is(":checked"),
+      hindi: $("#hindi").is(":checked"),
       spanish: $("#spanish").is(":checked"),
     };
 
-    if (!languages.english && !languages.spanish) {
-      if ($(this).attr("id") === "english") {
+    if (!languages.hindi && !languages.spanish) {
+      if ($(this).attr("id") === "hindi") {
         languages.spanish = true;
         $("#spanish").prop("checked", true);
       } else {
-        languages.english = true;
-        $("#english").prop("checked", true);
+        languages.hindi = true;
+        $("#hindi").prop("checked", true);
       }
     }
 
     loadNextVideo(languages);
   });
 
-  $("#englishCountBadge").click(function () {
-    $("#english").trigger("click");
+  $("#hindiCountBadge").click(function () {
+    $("#hindi").trigger("click");
   });
 
   $("#spanishCountBadge").click(function () {
@@ -52,15 +52,9 @@ $(document).ready(function () {
 });
 
 function loadNextVideo(languages) {
-  localStorage.setItem("languages", JSON.stringify(languages));
+  localStorage.setItem("languagesTs", JSON.stringify(languages));
   const videoList = loadPlaylists(languages);
-  const numberOfVideos = videoList.length;
-  const randomNumber = Math.random();
-  const nextIndex = `${randomNumber * numberOfVideos}`.split(".")[0];
-  console.log(
-    `numberOfVideos:${numberOfVideos}, randomNumber:${randomNumber}, nextIndex:${nextIndex}`
-  );
-  const video = videoList[nextIndex];
+  const video = videoList.pop();
 
   $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
   $("#videoIndex").val(video.index);
@@ -68,45 +62,45 @@ function loadNextVideo(languages) {
 }
 
 function resetToDefault() {
-  localStorage.removeItem("languages");
-  localStorage.removeItem("removedList");
+  localStorage.removeItem("languagesTs");
+  localStorage.removeItem("removedListTs");
   location.reload();
 }
 
 function removeVideo(video) {
-  const removedList = JSON.parse(localStorage.getItem("removedList")) || {
-    english: [],
+  const removedList = JSON.parse(localStorage.getItem("removedListTs")) || {
+    hindi: [],
     spanish: [],
   };
 
-  if (video.ln === "english") {
-    removedList.english.push(video.index);
+  if (video.ln === "hindi") {
+    removedList.hindi.push(video.index);
   } else if (video.ln === "spanish") {
     removedList.spanish.push(video.index);
   }
 
-  localStorage.setItem("removedList", JSON.stringify(removedList));
+  localStorage.setItem("removedListTs", JSON.stringify(removedList));
 }
 
 function loadPlaylists(languages) {
-  const removedList = JSON.parse(localStorage.getItem("removedList")) || {
-    english: [],
+  const removedList = JSON.parse(localStorage.getItem("removedListTs")) || {
+    hindi: [],
     spanish: [],
   };
   let videoList = [];
   const data = loadData();
 
   // https://www.youtube.com/@EnglishSpeeches
-  // Learn English with Speeches
-  const englishVideoList = data.englishVideoList;
+  // Learn Hindi with Speeches
+  const hindiVideoList = data.hindiVideoList;
 
   // https://www.youtube.com/@EasySpanish
   // Easy Spanish - Learning Spanish from the Streets
   const spanishVideoList = data.spanishVideoList;
 
-  if (removedList.english.length > 0) {
-    removedList.english.forEach((index) => {
-      englishVideoList.splice(index, 1);
+  if (removedList.hindi.length > 0) {
+    removedList.hindi.forEach((index) => {
+      hindiVideoList.splice(index, 1);
     });
   }
 
@@ -116,10 +110,10 @@ function loadPlaylists(languages) {
     });
   }
 
-  if (languages.english) videoList = videoList.concat(englishVideoList);
+  if (languages.hindi) videoList = videoList.concat(hindiVideoList);
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
 
-  $("#englishCount").html(englishVideoList.length);
+  $("#hindiCount").html(hindiVideoList.length);
   $("#spanishCount").html(spanishVideoList.length);
 
   return videoList;
@@ -133,7 +127,7 @@ function loadData() {
   // pageToken: Should be taken from nextPageToken of the previous response
   // items should be taken from the response and saved in the data object
 
-  const englishData = [
+  const hindiData = [
     {
       kind: "youtube#playlistItem",
       etag: "cWo9ZAGC72kDBWYS0bns0W-0kis",
@@ -5247,13 +5241,13 @@ function loadData() {
     },
   ];
 
-  const data = { englishVideoList: [], spanishVideoList: [] };
+  const data = { hindiVideoList: [], spanishVideoList: [] };
   let i = 0;
-  englishData.forEach((item) => {
-    data.englishVideoList.push({
+  hindiData.forEach((item) => {
+    data.hindiVideoList.push({
       index: i,
       id: item.contentDetails.videoId,
-      ln: "english",
+      ln: "hindi",
     });
     i++;
   });
