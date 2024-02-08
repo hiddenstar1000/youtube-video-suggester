@@ -1,6 +1,6 @@
 $(document).ready(function () {
   const languages = JSON.parse(localStorage.getItem("languagesTs")) || {
-    hindi: true,
+    hindi: false,
     spanish: true,
   };
 
@@ -15,14 +15,12 @@ $(document).ready(function () {
       spanish: $("#spanish").is(":checked"),
     };
 
-    if (!languages.hindi && !languages.spanish) {
-      if ($(this).attr("id") === "hindi") {
-        languages.spanish = true;
-        $("#spanish").prop("checked", true);
-      } else {
-        languages.hindi = true;
-        $("#hindi").prop("checked", true);
-      }
+    if ($(this).attr("id") === "hindi") {
+      languages.spanish = false;
+      $("#spanish").prop("checked", false);
+    } else {
+      languages.hindi = false;
+      $("#hindi").prop("checked", false);
     }
 
     loadNextVideo(languages);
@@ -45,10 +43,6 @@ $(document).ready(function () {
   $("#reset").click(function () {
     resetToDefault();
   });
-
-  $("#next").click(function () {
-    loadNextVideo(languages);
-  });
 });
 
 function loadNextVideo(languages) {
@@ -58,7 +52,9 @@ function loadNextVideo(languages) {
     hindiIndex: 0,
     spanishIndex: 0,
   };
-  const video = videoList[currentVideo.index];
+  let video = {};
+  if (languages.hindi) video = videoList[currentVideo.hindiIndex];
+  else if (languages.spanish) video = videoList[currentVideo.spanishIndex];
 
   $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
   $("#videoIndex").val(video.index);
@@ -72,11 +68,18 @@ function resetToDefault() {
 }
 
 function removeVideo(video) {
+  const currentVideo = JSON.parse(localStorage.getItem("currentVideoTs")) || {
+    hindiIndex: 0,
+    spanishIndex: 0,
+  };
+
   if (video.ln === "hindi") {
-    removedList.hindi.push(video.index);
+    currentVideo.hindiIndex++;
   } else if (video.ln === "spanish") {
-    removedList.spanish.push(video.index);
+    currentVideo.spanishIndex++;
   }
+
+  localStorage.setItem("currentVideoTs", JSON.stringify(currentVideo));
 }
 
 function loadPlaylists(languages) {
@@ -87,7 +90,7 @@ function loadPlaylists(languages) {
   const spanishVideoList = data.spanishVideoList;
 
   if (languages.hindi) videoList = videoList.concat(hindiVideoList);
-  if (languages.spanish) videoList = videoList.concat(spanishVideoList);
+  else if (languages.spanish) videoList = videoList.concat(spanishVideoList);
 
   $("#hindiCount").html(hindiVideoList.length);
   $("#spanishCount").html(spanishVideoList.length);
