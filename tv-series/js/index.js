@@ -55,7 +55,8 @@ function loadNextVideo(languages) {
   localStorage.setItem("languagesTs", JSON.stringify(languages));
   const videoList = loadPlaylists(languages);
   const currentVideo = JSON.parse(localStorage.getItem("currentVideoTs")) || {
-    index: 0,
+    hindiIndex: 0,
+    spanishIndex: 0,
   };
   const video = videoList[currentVideo.index];
 
@@ -66,53 +67,24 @@ function loadNextVideo(languages) {
 
 function resetToDefault() {
   localStorage.removeItem("languagesTs");
-  localStorage.removeItem("removedListTs");
   localStorage.removeItem("currentVideoTs");
   location.reload();
 }
 
 function removeVideo(video) {
-  const removedList = JSON.parse(localStorage.getItem("removedListTs")) || {
-    hindi: [],
-    spanish: [],
-  };
-
   if (video.ln === "hindi") {
     removedList.hindi.push(video.index);
   } else if (video.ln === "spanish") {
     removedList.spanish.push(video.index);
   }
-
-  localStorage.setItem("removedListTs", JSON.stringify(removedList));
 }
 
 function loadPlaylists(languages) {
-  const removedList = JSON.parse(localStorage.getItem("removedListTs")) || {
-    hindi: [],
-    spanish: [],
-  };
   let videoList = [];
   const data = loadData();
 
-  // https://www.youtube.com/@EnglishSpeeches
-  // Learn Hindi with Speeches
   const hindiVideoList = data.hindiVideoList;
-
-  // https://www.youtube.com/@EasySpanish
-  // Easy Spanish - Learning Spanish from the Streets
   const spanishVideoList = data.spanishVideoList;
-
-  if (removedList.hindi.length > 0) {
-    removedList.hindi.forEach((index) => {
-      hindiVideoList.splice(index, 1);
-    });
-  }
-
-  if (removedList.spanish.length > 0) {
-    removedList.spanish.forEach((index) => {
-      spanishVideoList.splice(index, 1);
-    });
-  }
 
   if (languages.hindi) videoList = videoList.concat(hindiVideoList);
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
