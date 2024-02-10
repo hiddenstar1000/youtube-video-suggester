@@ -1,7 +1,7 @@
 $(document).ready(function () {
   const languages = JSON.parse(localStorage.getItem("languagesTs")) || {
-    hindi: false,
-    spanish: true,
+    hindi: true,
+    spanish: false,
   };
 
   $("#hindi").prop("checked", languages.hindi);
