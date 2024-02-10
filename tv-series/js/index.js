@@ -16,11 +16,11 @@ $(document).ready(function () {
     };
 
     if ($(this).attr("id") === "hindi") {
-      languages.spanish = false;
-      $("#spanish").prop("checked", false);
+      languages.spanish = !languages.hindi;
+      $("#spanish").prop("checked", languages.spanish);
     } else {
-      languages.hindi = false;
-      $("#hindi").prop("checked", false);
+      languages.hindi = !languages.spanish;
+      $("#hindi").prop("checked", languages.hindi);
     }
 
     loadNextVideo(languages);

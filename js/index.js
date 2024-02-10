@@ -18,10 +18,10 @@ $(document).ready(function () {
     if (!languages.english && !languages.spanish) {
       if ($(this).attr("id") === "english") {
         languages.spanish = true;
-        $("#spanish").prop("checked", true);
+        $("#spanish").prop("checked", languages.spanish);
       } else {
         languages.english = true;
-        $("#english").prop("checked", true);
+        $("#english").prop("checked", languages.english);
       }
     }
 
