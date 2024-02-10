@@ -2963,6 +2963,12 @@ function loadData() {
     },
   ];
 
+  hindiData.sort((a, b) => {
+    let videoPublishedAtA = new Date(a.contentDetails.videoPublishedAt);
+    let videoPublishedAtB = new Date(b.contentDetails.videoPublishedAt);
+    return videoPublishedAtA - videoPublishedAtB;
+  });
+
   const data = { hindiVideoList: [], spanishVideoList: [] };
   let i = 0;
   hindiData.forEach((item) => {
@@ -2972,6 +2978,12 @@ function loadData() {
       ln: "hindi",
     });
     i++;
+  });
+
+  spanishData.sort((a, b) => {
+    let videoPublishedAtA = new Date(a.contentDetails.videoPublishedAt);
+    let videoPublishedAtB = new Date(b.contentDetails.videoPublishedAt);
+    return videoPublishedAtA - videoPublishedAtB;
   });
 
   i = 0;
