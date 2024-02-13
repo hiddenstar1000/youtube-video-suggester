@@ -56,7 +56,10 @@ function loadNextVideo(languages) {
   if (languages.hindi) video = videoList[currentVideo.hindiIndex];
   else if (languages.spanish) video = videoList[currentVideo.spanishIndex];
 
-  $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
+  $("#videoIframe").attr(
+    "src",
+    `https://www.youtube.com/embed/${video.id}?cc_load_policy=1`
+  );
   $("#videoIndex").val(video.index);
   $("#language").val(video.ln);
 }
