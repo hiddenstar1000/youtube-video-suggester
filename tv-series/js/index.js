@@ -1,4 +1,21 @@
 $(document).ready(function () {
+  let tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  let firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  let player;
+
+  const onApiChange = (_) => {
+    if (typeof player.setOption === "function") {
+      player.setOption("captions", "track", { languageCode: "hi" }); // undocumented call
+    }
+  };
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("existing-iframe", { events: { onApiChange } });
+  }
+
   const languages = JSON.parse(localStorage.getItem("languagesTs")) || {
     hindi: true,
     spanish: false,
@@ -58,7 +75,7 @@ function loadNextVideo(languages) {
 
   $("#videoIframe").attr(
     "src",
-    `https://www.youtube.com/embed/${video.id}?cc_load_policy=1`
+    `https://www.youtube.com/embed/${video.id}?enablejsapi=1&cc_load_policy=1`
   );
   $("#videoIndex").val(video.index);
   $("#language").val(video.ln);
