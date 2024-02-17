@@ -1,9 +1,9 @@
 $(document).ready(function () {
+  // Auto generated subtitles - start
   let tag = document.createElement("script");
   tag.src = "https://www.youtube.com/iframe_api";
   let firstScriptTag = document.getElementsByTagName("script")[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
   let player;
 
   const onApiChange = (_) => {
@@ -15,6 +15,7 @@ $(document).ready(function () {
   function onYouTubeIframeAPIReady() {
     player = new YT.Player("existing-iframe", { events: { onApiChange } });
   }
+  // Auto generated subtitles - end
 
   const languages = JSON.parse(localStorage.getItem("languagesTs")) || {
     hindi: true,
