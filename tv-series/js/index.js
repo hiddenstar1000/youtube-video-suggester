@@ -1,22 +1,4 @@
 $(document).ready(function () {
-  // Auto generated subtitles - start
-  let tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  let firstScriptTag = document.getElementsByTagName("script")[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  let player;
-
-  const onApiChange = (_) => {
-    if (typeof player.setOption === "function") {
-      player.setOption("captions", "track", { languageCode: "hi" }); // undocumented call
-    }
-  };
-
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player("existing-iframe", { events: { onApiChange } });
-  }
-  // Auto generated subtitles - end
-
   const languages = JSON.parse(localStorage.getItem("languagesTs")) || {
     hindi: true,
     spanish: false,
@@ -74,10 +56,7 @@ function loadNextVideo(languages) {
   if (languages.hindi) video = videoList[currentVideo.hindiIndex];
   else if (languages.spanish) video = videoList[currentVideo.spanishIndex];
 
-  $("#videoIframe").attr(
-    "src",
-    `https://www.youtube.com/embed/${video.id}?enablejsapi=1&cc_load_policy=1`
-  );
+  $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
   $("#videoIndex").val(video.index);
   $("#language").val(video.ln);
 }
