@@ -36,7 +36,7 @@ $(document).ready(function () {
 
   $("#watched").click(function () {
     const video = { index: $("#videoIndex").val(), ln: $("#language").val() };
-    removeVideo(video);
+    markWatchedVideo(video);
     loadNextVideo(languages);
   });
 
@@ -67,7 +67,7 @@ function resetToDefault() {
   location.reload();
 }
 
-function removeVideo(video) {
+function markWatchedVideo(video) {
   const currentVideo = JSON.parse(localStorage.getItem("currentVideoTs")) || {
     hindiIndex: 0,
     spanishIndex: 0,
