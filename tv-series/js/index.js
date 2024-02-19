@@ -34,7 +34,7 @@ $(document).ready(function () {
     $("#spanish").trigger("click");
   });
 
-  $("#remove").click(function () {
+  $("#watched").click(function () {
     const video = { index: $("#videoIndex").val(), ln: $("#language").val() };
     removeVideo(video);
     loadNextVideo(languages);

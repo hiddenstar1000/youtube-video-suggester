@@ -36,7 +36,7 @@ $(document).ready(function () {
     $("#spanish").trigger("click");
   });
 
-  $("#remove").click(function () {
+  $("#watched").click(function () {
     const video = { index: $("#videoIndex").val(), ln: $("#language").val() };
     removeVideo(video);
     loadNextVideo(languages);
@@ -69,27 +69,27 @@ function loadNextVideo(languages) {
 
 function resetToDefault() {
   localStorage.removeItem("languages");
-  localStorage.removeItem("removedList");
+  localStorage.removeItem("watchedList");
   location.reload();
 }
 
 function removeVideo(video) {
-  const removedList = JSON.parse(localStorage.getItem("removedList")) || {
+  const watchedList = JSON.parse(localStorage.getItem("watchedList")) || {
     english: [],
     spanish: [],
   };
 
   if (video.ln === "english") {
-    removedList.english.push(video.index);
+    watchedList.english.push(video.index);
   } else if (video.ln === "spanish") {
-    removedList.spanish.push(video.index);
+    watchedList.spanish.push(video.index);
   }
 
-  localStorage.setItem("removedList", JSON.stringify(removedList));
+  localStorage.setItem("watchedList", JSON.stringify(watchedList));
 }
 
 function loadPlaylists(languages) {
-  const removedList = JSON.parse(localStorage.getItem("removedList")) || {
+  const watchedList = JSON.parse(localStorage.getItem("watchedList")) || {
     english: [],
     spanish: [],
   };
@@ -104,14 +104,14 @@ function loadPlaylists(languages) {
   // Easy Spanish - Learning Spanish from the Streets
   const spanishVideoList = data.spanishVideoList;
 
-  if (removedList.english.length > 0) {
-    removedList.english.forEach((index) => {
+  if (watchedList.english.length > 0) {
+    watchedList.english.forEach((index) => {
       englishVideoList.splice(index, 1);
     });
   }
 
-  if (removedList.spanish.length > 0) {
-    removedList.spanish.forEach((index) => {
+  if (watchedList.spanish.length > 0) {
+    watchedList.spanish.forEach((index) => {
       spanishVideoList.splice(index, 1);
     });
   }
