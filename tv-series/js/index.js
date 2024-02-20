@@ -1,13 +1,5 @@
 $(document).ready(function () {
-  const languages = JSON.parse(localStorage.getItem("languagesTs")) || {
-    hindi: true,
-    spanish: false,
-  };
-
-  $("#hindi").prop("checked", languages.hindi);
-  $("#spanish").prop("checked", languages.spanish);
-
-  loadNextVideo(languages);
+  init();
 
   $(".languages").click(function () {
     const languages = {
@@ -44,6 +36,18 @@ $(document).ready(function () {
     resetToDefault();
   });
 });
+
+function init() {
+  const languages = JSON.parse(localStorage.getItem("languagesTs")) || {
+    hindi: true,
+    spanish: false,
+  };
+
+  $("#hindi").prop("checked", languages.hindi);
+  $("#spanish").prop("checked", languages.spanish);
+
+  loadNextVideo(languages);
+}
 
 function loadNextVideo(languages) {
   localStorage.setItem("languagesTs", JSON.stringify(languages));
