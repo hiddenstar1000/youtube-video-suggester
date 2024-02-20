@@ -1,10 +1,12 @@
 $(document).ready(function () {
   const languages = JSON.parse(localStorage.getItem("languages")) || {
     english: true,
+    hindi: true,
     spanish: true,
   };
 
   $("#english").prop("checked", languages.english);
+  $("#hindi").prop("checked", languages.hindi);
   $("#spanish").prop("checked", languages.spanish);
 
   loadNextVideo(languages);
@@ -12,10 +14,11 @@ $(document).ready(function () {
   $(".languages").click(function () {
     const languages = {
       english: $("#english").is(":checked"),
+      hindi: $("#hindi").is(":checked"),
       spanish: $("#spanish").is(":checked"),
     };
 
-    if (!languages.english && !languages.spanish) {
+    if (!languages.english && !languages.hindi && !languages.spanish) {
       languages.english = true;
       $("#english").prop("checked", languages.english);
     }
@@ -25,6 +28,10 @@ $(document).ready(function () {
 
   $("#englishCountBadge").click(function () {
     $("#english").trigger("click");
+  });
+
+  $("#hindiCountBadge").click(function () {
+    $("#hindi").trigger("click");
   });
 
   $("#spanishCountBadge").click(function () {
@@ -71,11 +78,14 @@ function resetToDefault() {
 function markWatchedVideo(video) {
   const watchedList = JSON.parse(localStorage.getItem("watchedList")) || {
     english: [],
+    hindi: [],
     spanish: [],
   };
 
   if (video.ln === "english") {
     watchedList.english.push(video.index);
+  } else if (video.ln === "hindi") {
+    watchedList.hindi.push(video.index);
   } else if (video.ln === "spanish") {
     watchedList.spanish.push(video.index);
   }
@@ -86,6 +96,7 @@ function markWatchedVideo(video) {
 function loadPlaylists(languages) {
   const watchedList = JSON.parse(localStorage.getItem("watchedList")) || {
     english: [],
+    hindi: [],
     spanish: [],
   };
   let videoList = [];
@@ -94,6 +105,10 @@ function loadPlaylists(languages) {
   // https://www.youtube.com/@EnglishSpeeches
   // Learn English with Speeches
   const englishVideoList = data.englishVideoList;
+
+  // https://www.youtube.com/@easylanguages
+  // Easy Hindi - Learn Hindi from the Streets
+  const hindiVideoList = data.hindiVideoList;
 
   // https://www.youtube.com/@EasySpanish
   // Easy Spanish - Learning Spanish from the Streets
@@ -105,6 +120,12 @@ function loadPlaylists(languages) {
     });
   }
 
+  if (watchedList.hindi.length > 0) {
+    watchedList.hindi.forEach((index) => {
+      hindiVideoList.splice(index, 1);
+    });
+  }
+
   if (watchedList.spanish.length > 0) {
     watchedList.spanish.forEach((index) => {
       spanishVideoList.splice(index, 1);
@@ -112,9 +133,11 @@ function loadPlaylists(languages) {
   }
 
   if (languages.english) videoList = videoList.concat(englishVideoList);
+  if (languages.hindi) videoList = videoList.concat(hindiVideoList);
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
 
   $("#englishCount").html(englishVideoList.length);
+  $("#hindiCount").html(englishVideoList.length);
   $("#spanishCount").html(spanishVideoList.length);
 
   return videoList;
@@ -2612,6 +2635,15 @@ function loadData() {
       },
     },
   ];
+
+  // URL: https://developers.google.com/youtube/v3/docs/playlistItems/list
+  // part: contentDetails
+  // maxResults: 50
+  // playlistId: PLA5UIoabheFMXv9ChtIbHIlgyleHQaM4h
+  // pageToken: Should be taken from nextPageToken of the previous response
+  // items should be taken from the response and saved in the data object
+
+  const hindiData = [];
 
   // URL: https://developers.google.com/youtube/v3/docs/playlistItems/list
   // part: contentDetails
@@ -5242,13 +5274,27 @@ function loadData() {
     },
   ];
 
-  const data = { englishVideoList: [], spanishVideoList: [] };
+  const data = {
+    englishVideoList: [],
+    hindiVideoList: [],
+    spanishVideoList: [],
+  };
   let i = 0;
   englishData.forEach((item) => {
     data.englishVideoList.push({
       index: i,
       id: item.contentDetails.videoId,
       ln: "english",
+    });
+    i++;
+  });
+
+  i = 0;
+  hindiData.forEach((item) => {
+    data.hindiVideoList.push({
+      index: i,
+      id: item.contentDetails.videoId,
+      ln: "hindi",
     });
     i++;
   });

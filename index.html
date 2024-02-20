@@ -54,6 +54,19 @@
         </div>
         <div class="col-lg-1 col-md-2 col-sm-2">
           <button type="button" class="btn btn-primary position-relative">
+            <label for="hindi" class="dx-pointer">Hindi:</label>
+            <input id="hindi" type="checkbox" class="languages" />
+            <span
+              id="hindiCountBadge"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              <span id="hindiCount"></span>
+              <span class="visually-hidden">hindi count</span>
+            </span>
+          </button>
+        </div>
+        <div class="col-lg-1 col-md-2 col-sm-2">
+          <button type="button" class="btn btn-primary position-relative">
             <label for="spanish" class="dx-pointer">Spanish:</label>
             <input id="spanish" type="checkbox" class="languages" />
             <span
@@ -65,7 +78,7 @@
             </span>
           </button>
         </div>
-        <div class="col-lg-8 col-md-6 col-sm-6 d-grid gap-2 d-md-flex">
+        <div class="col-lg-7 col-md-4 col-sm-4 d-grid gap-2 d-md-flex">
           <button id="watched" class="btn btn-primary" type="button">
             Watched
           </button>
