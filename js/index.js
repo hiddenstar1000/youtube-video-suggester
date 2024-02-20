@@ -137,7 +137,7 @@ function loadPlaylists(languages) {
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
 
   $("#englishCount").html(englishVideoList.length);
-  $("#hindiCount").html(englishVideoList.length);
+  $("#hindiCount").html(hindiVideoList.length);
   $("#spanishCount").html(spanishVideoList.length);
 
   return videoList;
