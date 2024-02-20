@@ -2649,6 +2649,8 @@ function loadData() {
         videoId: "RINNO-dkha0",
         videoPublishedAt: "2018-07-07T02:30:01Z",
       },
+    },
+    {
       contentDetails: {
         videoId: "y3Gb87ID7_w",
         videoPublishedAt: "2018-07-08T02:30:01Z",
