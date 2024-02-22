@@ -7,13 +7,15 @@ $(document).ready(function () {
       hindi: $("#hindi").is(":checked"),
       japanese: $("#japanese").is(":checked"),
       spanish: $("#spanish").is(":checked"),
+      russian: $("#russian").is(":checked"),
     };
 
     if (
       !languages.english &&
       !languages.hindi &&
       !languages.japanese &&
-      !languages.spanish
+      !languages.spanish &&
+      !languages.russian
     ) {
       languages.english = true;
       $("#english").prop("checked", languages.english);
@@ -38,6 +40,10 @@ $(document).ready(function () {
     $("#spanish").trigger("click");
   });
 
+  $("#russianCountBadge").click(function () {
+    $("#russian").trigger("click");
+  });
+
   $("#watched").click(function () {
     const video = { index: $("#videoIndex").val(), ln: $("#language").val() };
     markWatchedVideo(video);
@@ -54,6 +60,7 @@ $(document).ready(function () {
       hindi: $("#hindi").is(":checked"),
       japanese: $("#japanese").is(":checked"),
       spanish: $("#spanish").is(":checked"),
+      russian: $("#russian").is(":checked"),
     };
 
     loadNextVideo(languages);
@@ -66,12 +73,14 @@ function init() {
     hindi: true,
     japanese: true,
     spanish: true,
+    russian: true,
   };
 
   $("#english").prop("checked", languages.english);
   $("#hindi").prop("checked", languages.hindi);
   $("#japanese").prop("checked", languages.japanese);
   $("#spanish").prop("checked", languages.spanish);
+  $("#russian").prop("checked", languages.russian);
 
   loadNextVideo(languages);
 }
@@ -104,6 +113,7 @@ function markWatchedVideo(video) {
     hindi: [],
     japanese: [],
     spanish: [],
+    russian: [],
   };
 
   if (video.ln === "english") {
@@ -114,6 +124,8 @@ function markWatchedVideo(video) {
     watchedList.japanese.push(video.index);
   } else if (video.ln === "spanish") {
     watchedList.spanish.push(video.index);
+  } else if (video.ln === "russian") {
+    watchedList.russian.push(video.index);
   }
 
   localStorage.setItem("watchedList", JSON.stringify(watchedList));
@@ -125,6 +137,7 @@ function loadPlaylists(languages) {
     hindi: [],
     japanese: [],
     spanish: [],
+    russian: [],
   };
   let videoList = [];
   const data = loadData();
@@ -144,6 +157,10 @@ function loadPlaylists(languages) {
   // https://www.youtube.com/@EasySpanish
   // Easy Spanish - Learning Spanish from the Streets
   const spanishVideoList = data.spanishVideoList;
+
+  // https://www.youtube.com/@EasyRussianVideos
+  // Easy Russian - street interviews and more
+  const russianVideoList = data.russianVideoList;
 
   if (watchedList.english.length > 0) {
     watchedList.english.forEach((index) => {
@@ -169,15 +186,23 @@ function loadPlaylists(languages) {
     });
   }
 
+  if (watchedList.russian.length > 0) {
+    watchedList.russian.forEach((index) => {
+      russianVideoList.splice(index, 1);
+    });
+  }
+
   if (languages.english) videoList = videoList.concat(englishVideoList);
   if (languages.hindi) videoList = videoList.concat(hindiVideoList);
   if (languages.japanese) videoList = videoList.concat(japaneseVideoList);
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
+  if (languages.russian) videoList = videoList.concat(russianVideoList);
 
   $("#englishCount").html(englishVideoList.length);
   $("#hindiCount").html(hindiVideoList.length);
   $("#japaneseCount").html(japaneseVideoList.length);
   $("#spanishCount").html(spanishVideoList.length);
+  $("#russianCount").html(russianVideoList.length);
 
   return videoList;
 }
@@ -5348,11 +5373,34 @@ function loadData() {
     },
   ];
 
+  // URL: https://developers.google.com/youtube/v3/docs/playlistItems/list
+  // part: contentDetails
+  // maxResults: 50
+  // playlistId: PLxRXPwbJodj_ter_1MAr7sGW1kkc1sZQN
+  // pageToken: Should be taken from nextPageToken of the previous response
+  // items should be taken from the response and saved in the data object
+
+  const russianData = [
+    {
+      contentDetails: {
+        videoId: "JRcV-A7r470",
+        videoPublishedAt: "2018-07-07T02:30:01Z",
+      },
+    },
+    {
+      contentDetails: {
+        videoId: "Fjkw9vYDukg",
+        videoPublishedAt: "2018-07-08T02:30:01Z",
+      },
+    },
+  ];
+
   const data = {
     englishVideoList: [],
     hindiVideoList: [],
     japaneseVideoList: [],
     spanishVideoList: [],
+    russianVideoList: [],
   };
   let i = 0;
   englishData.forEach((item) => {
@@ -5390,6 +5438,16 @@ function loadData() {
       index: i,
       id: item.contentDetails.videoId,
       ln: "spanish",
+    });
+    i++;
+  });
+
+  i = 0;
+  russianData.forEach((item) => {
+    data.russianVideoList.push({
+      index: i,
+      id: item.contentDetails.videoId,
+      ln: "russian",
     });
     i++;
   });
