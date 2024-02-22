@@ -5,10 +5,16 @@ $(document).ready(function () {
     const languages = {
       english: $("#english").is(":checked"),
       hindi: $("#hindi").is(":checked"),
+      japanese: $("#japanese").is(":checked"),
       spanish: $("#spanish").is(":checked"),
     };
 
-    if (!languages.english && !languages.hindi && !languages.spanish) {
+    if (
+      !languages.english &&
+      !languages.hindi &&
+      !languages.japanese &&
+      !languages.spanish
+    ) {
       languages.english = true;
       $("#english").prop("checked", languages.english);
     }
@@ -22,6 +28,10 @@ $(document).ready(function () {
 
   $("#hindiCountBadge").click(function () {
     $("#hindi").trigger("click");
+  });
+
+  $("#japaneseCountBadge").click(function () {
+    $("#japanese").trigger("click");
   });
 
   $("#spanishCountBadge").click(function () {
@@ -42,6 +52,7 @@ $(document).ready(function () {
     const languages = {
       english: $("#english").is(":checked"),
       hindi: $("#hindi").is(":checked"),
+      japanese: $("#japanese").is(":checked"),
       spanish: $("#spanish").is(":checked"),
     };
 
@@ -53,11 +64,13 @@ function init() {
   const languages = JSON.parse(localStorage.getItem("languages")) || {
     english: true,
     hindi: true,
+    japanese: true,
     spanish: true,
   };
 
   $("#english").prop("checked", languages.english);
   $("#hindi").prop("checked", languages.hindi);
+  $("#japanese").prop("checked", languages.japanese);
   $("#spanish").prop("checked", languages.spanish);
 
   loadNextVideo(languages);
@@ -89,6 +102,7 @@ function markWatchedVideo(video) {
   const watchedList = JSON.parse(localStorage.getItem("watchedList")) || {
     english: [],
     hindi: [],
+    japanese: [],
     spanish: [],
   };
 
@@ -96,6 +110,8 @@ function markWatchedVideo(video) {
     watchedList.english.push(video.index);
   } else if (video.ln === "hindi") {
     watchedList.hindi.push(video.index);
+  } else if (video.ln === "japanese") {
+    watchedList.japanese.push(video.index);
   } else if (video.ln === "spanish") {
     watchedList.spanish.push(video.index);
   }
@@ -107,6 +123,7 @@ function loadPlaylists(languages) {
   const watchedList = JSON.parse(localStorage.getItem("watchedList")) || {
     english: [],
     hindi: [],
+    japanese: [],
     spanish: [],
   };
   let videoList = [];
@@ -119,6 +136,10 @@ function loadPlaylists(languages) {
   // https://www.youtube.com/@easylanguages
   // Easy Hindi - Learn Hindi from the Streets
   const hindiVideoList = data.hindiVideoList;
+
+  // https://www.youtube.com/@easylanguages
+  // Easy Japanese - Learn Japanese from the Streets!
+  const japaneseVideoList = data.japaneseVideoList;
 
   // https://www.youtube.com/@EasySpanish
   // Easy Spanish - Learning Spanish from the Streets
@@ -136,6 +157,12 @@ function loadPlaylists(languages) {
     });
   }
 
+  if (watchedList.japanese.length > 0) {
+    watchedList.japanese.forEach((index) => {
+      japaneseVideoList.splice(index, 1);
+    });
+  }
+
   if (watchedList.spanish.length > 0) {
     watchedList.spanish.forEach((index) => {
       spanishVideoList.splice(index, 1);
@@ -144,10 +171,12 @@ function loadPlaylists(languages) {
 
   if (languages.english) videoList = videoList.concat(englishVideoList);
   if (languages.hindi) videoList = videoList.concat(hindiVideoList);
+  if (languages.japanese) videoList = videoList.concat(japaneseVideoList);
   if (languages.spanish) videoList = videoList.concat(spanishVideoList);
 
   $("#englishCount").html(englishVideoList.length);
   $("#hindiCount").html(hindiVideoList.length);
+  $("#japaneseCount").html(japaneseVideoList.length);
   $("#spanishCount").html(spanishVideoList.length);
 
   return videoList;
@@ -2663,6 +2692,28 @@ function loadData() {
     {
       contentDetails: {
         videoId: "y3Gb87ID7_w",
+        videoPublishedAt: "2018-07-08T02:30:01Z",
+      },
+    },
+  ];
+
+  // URL: https://developers.google.com/youtube/v3/docs/playlistItems/list
+  // part: contentDetails
+  // maxResults: 50
+  // playlistId: PLA5UIoabheFO87Zs0a2W-5ZMzWBjhg_Ap
+  // pageToken: Should be taken from nextPageToken of the previous response
+  // items should be taken from the response and saved in the data object
+
+  const japaneseData = [
+    {
+      contentDetails: {
+        videoId: "qzzweIQoIOU",
+        videoPublishedAt: "2018-07-07T02:30:01Z",
+      },
+    },
+    {
+      contentDetails: {
+        videoId: "XneUvKLO06o",
         videoPublishedAt: "2018-07-08T02:30:01Z",
       },
     },
@@ -5300,6 +5351,7 @@ function loadData() {
   const data = {
     englishVideoList: [],
     hindiVideoList: [],
+    japaneseVideoList: [],
     spanishVideoList: [],
   };
   let i = 0;
@@ -5318,6 +5370,16 @@ function loadData() {
       index: i,
       id: item.contentDetails.videoId,
       ln: "hindi",
+    });
+    i++;
+  });
+
+  i = 0;
+  japaneseData.forEach((item) => {
+    data.japaneseVideoList.push({
+      index: i,
+      id: item.contentDetails.videoId,
+      ln: "japanese",
     });
     i++;
   });

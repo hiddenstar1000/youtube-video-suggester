@@ -67,6 +67,19 @@
         </div>
         <div class="col-lg-1 col-md-2 col-sm-2">
           <button type="button" class="btn btn-primary position-relative">
+            <label for="japanese" class="dx-pointer">Japanese:</label>
+            <input id="japanese" type="checkbox" class="languages" />
+            <span
+              id="japaneseCountBadge"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              <span id="japaneseCount"></span>
+              <span class="visually-hidden">japanese count</span>
+            </span>
+          </button>
+        </div>
+        <div class="col-lg-1 col-md-2 col-sm-2">
+          <button type="button" class="btn btn-primary position-relative">
             <label for="spanish" class="dx-pointer">Spanish:</label>
             <input id="spanish" type="checkbox" class="languages" />
             <span
@@ -78,7 +91,7 @@
             </span>
           </button>
         </div>
-        <div class="col-lg-7 col-md-4 col-sm-4 d-grid gap-2 d-md-flex">
+        <div class="col-lg-6 col-md-4 col-sm-4 d-grid gap-2 d-md-flex">
           <button id="watched" class="btn btn-primary" type="button">
             Watched
           </button>
