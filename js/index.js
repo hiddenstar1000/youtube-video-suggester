@@ -21,7 +21,7 @@ $(document).ready(function () {
       $("#english").prop("checked", languages.english);
     }
 
-    loadNextVideo(languages);
+    loadNextVideo();
   });
 
   $("#englishCountBadge").click(function () {
@@ -47,7 +47,7 @@ $(document).ready(function () {
   $("#watched").click(function () {
     const video = { index: $("#videoIndex").val(), ln: $("#language").val() };
     markWatchedVideo(video);
-    loadNextVideo(languages);
+    loadNextVideo();
   });
 
   $("#reset").click(function () {
@@ -55,15 +55,7 @@ $(document).ready(function () {
   });
 
   $("#next").click(function () {
-    const languages = {
-      english: $("#english").is(":checked"),
-      hindi: $("#hindi").is(":checked"),
-      japanese: $("#japanese").is(":checked"),
-      spanish: $("#spanish").is(":checked"),
-      russian: $("#russian").is(":checked"),
-    };
-
-    loadNextVideo(languages);
+    loadNextVideo();
   });
 });
 
@@ -82,10 +74,18 @@ function init() {
   $("#spanish").prop("checked", languages.spanish);
   $("#russian").prop("checked", languages.russian);
 
-  loadNextVideo(languages);
+  loadNextVideo();
 }
 
-function loadNextVideo(languages) {
+function loadNextVideo() {
+  const languages = {
+    english: $("#english").is(":checked"),
+    hindi: $("#hindi").is(":checked"),
+    japanese: $("#japanese").is(":checked"),
+    spanish: $("#spanish").is(":checked"),
+    russian: $("#russian").is(":checked"),
+  };
+
   localStorage.setItem("languages", JSON.stringify(languages));
   const videoList = loadPlaylists(languages);
   const numberOfVideos = videoList.length;
