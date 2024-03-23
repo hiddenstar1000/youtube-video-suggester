@@ -2,5 +2,7 @@ npm run build-css
 npm run build-js
 npm run build-css-ts
 npm run build-js-ts
+npm run build-css-ft
+npm run build-js-ft
 git add *.min.js
 git add *.min.css

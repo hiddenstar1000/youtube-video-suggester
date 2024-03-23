@@ -12,6 +12,8 @@
     "build-js": "minify js/index.js > js/index.min.js",
     "build-css-ts": "minify tv-series/css/index.css > tv-series/css/index.min.css",
     "build-js-ts": "minify tv-series/js/index.js > tv-series/js/index.min.js",
+    "build-css-ft": "minify fairy-tales/css/index.css > fairy-tales/css/index.min.css",
+    "build-js-ft": "minify fairy-tales/js/index.js > fairy-tales/js/index.min.js",
     "prepare": "husky"
   },
   "repository": {
