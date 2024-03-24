@@ -7,26 +7,30 @@ $(document).ready(function () {
       hindi: $("#hindi").is(":checked"),
       japanese: $("#japanese").is(":checked"),
       spanish: $("#spanish").is(":checked"),
-      russian: $("#russian").is(":checked"),
     };
 
     if ($(this).attr("id") === "english") {
       languages.hindi = !languages.english;
       languages.japanese = !languages.english;
       languages.spanish = !languages.english;
-      languages.russian = !languages.english;
     } else if ($(this).attr("id") === "hindi") {
       languages.english = !languages.hindi;
       languages.japanese = !languages.hindi;
       languages.spanish = !languages.hindi;
-      languages.russian = !languages.hindi;
+    } else if ($(this).attr("id") === "japanese") {
+      languages.english = !languages.japanese;
+      languages.hindi = !languages.japanese;
+      languages.spanish = !languages.japanese;
+    } else if ($(this).attr("id") === "spanish") {
+      languages.english = !languages.spanish;
+      languages.hindi = !languages.spanish;
+      languages.japanese = !languages.spanish;
     }
 
     $("#english").prop("checked", languages.english);
     $("#hindi").prop("checked", languages.hindi);
     $("#japanese").prop("checked", languages.japanese);
     $("#spanish").prop("checked", languages.spanish);
-    $("#russian").prop("checked", languages.russian);
 
     loadNextVideo();
   });
@@ -45,10 +49,6 @@ $(document).ready(function () {
 
   $("#spanishCountBadge").click(function () {
     $("#spanish").trigger("click");
-  });
-
-  $("#russianCountBadge").click(function () {
-    $("#russian").trigger("click");
   });
 
   $("#watched").click(function () {
@@ -72,14 +72,12 @@ function init() {
     hindi: false,
     japanese: false,
     spanish: false,
-    russian: false,
   };
 
   $("#english").prop("checked", languages.english);
   $("#hindi").prop("checked", languages.hindi);
   $("#japanese").prop("checked", languages.japanese);
   $("#spanish").prop("checked", languages.spanish);
-  $("#russian").prop("checked", languages.russian);
 
   loadNextVideo();
 }
@@ -90,7 +88,6 @@ function loadNextVideo() {
     hindi: $("#hindi").is(":checked"),
     japanese: $("#japanese").is(":checked"),
     spanish: $("#spanish").is(":checked"),
-    russian: $("#russian").is(":checked"),
   };
 
   localStorage.setItem("languages", JSON.stringify(languages));
@@ -108,6 +105,10 @@ function loadNextVideo() {
     video = item.videos.filter((video) => video.ln === "english")[0];
   } else if (languages.hindi) {
     video = item.videos.filter((video) => video.ln === "hindi")[0];
+  } else if (languages.japanese) {
+    video = item.videos.filter((video) => video.ln === "japanese")[0];
+  } else if (languages.spanish) {
+    video = item.videos.filter((video) => video.ln === "spanish")[0];
   }
 
   $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
@@ -117,43 +118,27 @@ function loadNextVideo() {
 
 function resetToDefault() {
   localStorage.removeItem("languagesFt");
-  localStorage.removeItem("watchedList");
+  localStorage.removeItem("watchedListFt");
   location.reload();
 }
 
 function markWatchedVideo(video) {
-  const watchedList = JSON.parse(localStorage.getItem("watchedList")) || {
-    english: [],
-    hindi: [],
-    japanese: [],
-    spanish: [],
-    russian: [],
+  const watchedList = JSON.parse(localStorage.getItem("watchedListFt")) || {
+    list: [],
   };
 
-  if (video.ln === "english") {
-    watchedList.english.push(video.index);
-  } else if (video.ln === "hindi") {
-    watchedList.hindi.push(video.index);
-  } else if (video.ln === "japanese") {
-    watchedList.japanese.push(video.index);
-  } else if (video.ln === "spanish") {
-    watchedList.spanish.push(video.index);
-  } else if (video.ln === "russian") {
-    watchedList.russian.push(video.index);
-  }
+  watchedList.list.push(video.index);
 
-  localStorage.setItem("watchedList", JSON.stringify(watchedList));
+  localStorage.setItem("watchedListFt", JSON.stringify(watchedList));
 }
 
 function loadPlaylists() {
-  const watchedList = JSON.parse(localStorage.getItem("watchedList")) || {
+  const watchedList = JSON.parse(localStorage.getItem("watchedListFt")) || {
     list: [],
   };
   let playList = [];
   const data = loadData();
 
-  // https://www.youtube.com/@EnglishSpeeches
-  // Learn English with Speeches
   const fairyTalesVideoList = data.fairyTalesVideoList;
 
   if (watchedList.list.length > 0) {
@@ -166,6 +151,8 @@ function loadPlaylists() {
 
   $("#englishCount").html(fairyTalesVideoList.length);
   $("#hindiCount").html(fairyTalesVideoList.length);
+  $("#japaneseCount").html(fairyTalesVideoList.length);
+  $("#spanishCount").html(fairyTalesVideoList.length);
 
   return playList;
 }
@@ -178,12 +165,16 @@ function loadData() {
   // pageToken: Should be taken from nextPageToken of the previous response
   // items should be taken from the response and saved in the data object
 
+  // Playlist: https://www.youtube.com/playlist?list=PLxc3aXYiyRbCs_-t7LTcMYONDxRtcbp6R
+
   const englishData = [
     {
       contentDetails: {
         videos: [
           { id: "GxcGVCEEdcU", ln: "english" },
           { id: "68JOgtt15Zs", ln: "hindi" },
+          { id: "r1sUoPAGoV0", ln: "japanese" },
+          { id: "5ZmksHMjSec", ln: "spanish" },
         ],
       },
     },
