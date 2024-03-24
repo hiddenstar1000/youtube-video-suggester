@@ -32,7 +32,7 @@ $(document).ready(function () {
     $("#japanese").prop("checked", languages.japanese);
     $("#spanish").prop("checked", languages.spanish);
 
-    loadNextVideo();
+    changeLanguage();
   });
 
   $("#englishCountBadge").click(function () {
@@ -100,6 +100,25 @@ function loadNextVideo() {
   );
   const item = playList[nextIndex];
   let video = item.videos[0];
+  localStorage.setItem("currentVideoTs", JSON.stringify(video));
+
+  if (languages.english) {
+    video = item.videos.filter((video) => video.ln === "english")[0];
+  } else if (languages.hindi) {
+    video = item.videos.filter((video) => video.ln === "hindi")[0];
+  } else if (languages.japanese) {
+    video = item.videos.filter((video) => video.ln === "japanese")[0];
+  } else if (languages.spanish) {
+    video = item.videos.filter((video) => video.ln === "spanish")[0];
+  }
+
+  $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
+  $("#videoIndex").val(item.index);
+  $("#language").val(video.ln);
+}
+
+function changeLanguage() {
+  const video = JSON.parse(localStorage.getItem("currentVideoTs")) || {};
 
   if (languages.english) {
     video = item.videos.filter((video) => video.ln === "english")[0];
