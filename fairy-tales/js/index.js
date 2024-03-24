@@ -100,7 +100,7 @@ function loadNextVideo() {
   );
   const item = playList[nextIndex];
   let video = item.videos[0];
-  localStorage.setItem("currentVideoTs", JSON.stringify(video));
+  localStorage.setItem("currentVideoFt", JSON.stringify(video));
 
   if (languages.english) {
     video = item.videos.filter((video) => video.ln === "english")[0];
@@ -118,7 +118,7 @@ function loadNextVideo() {
 }
 
 function changeLanguage() {
-  const video = JSON.parse(localStorage.getItem("currentVideoTs")) || {};
+  const video = JSON.parse(localStorage.getItem("currentVideoFt")) || {};
 
   if (languages.english) {
     video = item.videos.filter((video) => video.ln === "english")[0];
