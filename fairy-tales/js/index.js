@@ -10,16 +10,23 @@ $(document).ready(function () {
       russian: $("#russian").is(":checked"),
     };
 
-    if (
-      !languages.english &&
-      !languages.hindi &&
-      !languages.japanese &&
-      !languages.spanish &&
-      !languages.russian
-    ) {
-      languages.english = true;
-      $("#english").prop("checked", languages.english);
+    if ($(this).attr("id") === "english") {
+      languages.hindi = !languages.english;
+      languages.japanese = !languages.english;
+      languages.spanish = !languages.english;
+      languages.russian = !languages.english;
+    } else if ($(this).attr("id") === "hindi") {
+      languages.english = !languages.hindi;
+      languages.japanese = !languages.hindi;
+      languages.spanish = !languages.hindi;
+      languages.russian = !languages.hindi;
     }
+
+    $("#english").prop("checked", languages.english);
+    $("#hindi").prop("checked", languages.hindi);
+    $("#japanese").prop("checked", languages.japanese);
+    $("#spanish").prop("checked", languages.spanish);
+    $("#russian").prop("checked", languages.russian);
 
     loadNextVideo();
   });
@@ -95,13 +102,17 @@ function loadNextVideo() {
     `numberOfVideos:${numberOfVideos}, randomNumber:${randomNumber}, nextIndex:${nextIndex}`
   );
   const item = playList[nextIndex];
+  let video = item.videos[0];
 
-  $("#videoIframe").attr(
-    "src",
-    `https://www.youtube.com/embed/${item.videos[0].id}`
-  );
+  if (languages.english) {
+    video = item.videos.filter((video) => video.ln === "english")[0];
+  } else if (languages.hindi) {
+    video = item.videos.filter((video) => video.ln === "hindi")[0];
+  }
+
+  $("#videoIframe").attr("src", `https://www.youtube.com/embed/${video.id}`);
   $("#videoIndex").val(item.index);
-  $("#language").val(item.videos[0].ln);
+  $("#language").val(video.ln);
 }
 
 function resetToDefault() {
@@ -162,17 +173,17 @@ function loadData() {
   // URL: https://developers.google.com/youtube/v3/docs/playlistItems/list
   // part: contentDetails
   // maxResults: 50
-  // playlistId: PLosaC3gb0kGDhmBVm6M47jcU8BbEhTnlP
+  // playlistId: PLxc3aXYiyRbCs_-t7LTcMYONDxRtcbp6R
   // pageToken: Should be taken from nextPageToken of the previous response
   // items should be taken from the response and saved in the data object
 
   const englishData = [
     {
-      kind: "youtube#playlistItem",
-      etag: "cWo9ZAGC72kDBWYS0bns0W-0kis",
-      id: "UExvc2FDM2diMGtHRGhtQlZtNk00N2pjVThCYkVoVG5sUC5ENDU4Q0M4RDExNzM1Mjcy",
       contentDetails: {
-        videos: [{ id: "fBnAMUkNM2k", ln: "english" }],
+        videos: [
+          { id: "GxcGVCEEdcU", ln: "english" },
+          { id: "68JOgtt15Zs", ln: "hindi" },
+        ],
       },
     },
   ];
