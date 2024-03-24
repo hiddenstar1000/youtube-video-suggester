@@ -90,7 +90,7 @@ function loadNextVideo() {
     spanish: $("#spanish").is(":checked"),
   };
 
-  localStorage.setItem("languages", JSON.stringify(languages));
+  localStorage.setItem("languagesFt", JSON.stringify(languages));
   const playList = loadPlaylists();
   const numberOfVideos = playList.length;
   const randomNumber = Math.random();
