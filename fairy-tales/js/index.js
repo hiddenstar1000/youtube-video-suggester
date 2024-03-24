@@ -118,6 +118,13 @@ function loadNextVideo() {
 }
 
 function changeLanguage() {
+  const languages = {
+    english: $("#english").is(":checked"),
+    hindi: $("#hindi").is(":checked"),
+    japanese: $("#japanese").is(":checked"),
+    spanish: $("#spanish").is(":checked"),
+  };
+
   const video = JSON.parse(localStorage.getItem("currentVideoFt")) || {};
 
   if (languages.english) {
