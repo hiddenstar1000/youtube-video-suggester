@@ -165,6 +165,7 @@ function loadPlaylists() {
   playList = playList.concat(fairyTalesVideoList);
 
   $("#englishCount").html(fairyTalesVideoList.length);
+  $("#hindiCount").html(fairyTalesVideoList.length);
 
   return playList;
 }
