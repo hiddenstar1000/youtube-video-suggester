@@ -197,11 +197,23 @@ function loadData() {
   const englishData = [
     {
       contentDetails: {
+        title: "The Lion and The Mouse",
         videos: [
           { id: "GxcGVCEEdcU", ln: "english" },
           { id: "68JOgtt15Zs", ln: "hindi" },
           { id: "r1sUoPAGoV0", ln: "japanese" },
           { id: "5ZmksHMjSec", ln: "spanish" },
+        ],
+      },
+    },
+    {
+      contentDetails: {
+        title: "Maya the Bee",
+        videos: [
+          { id: "F-dtitGeyLk", ln: "english" },
+          { id: "clqgklgXUsM", ln: "hindi" },
+          { id: "F-dtitGeyLk", ln: "japanese" }, // No Japanese
+          { id: "fuuUaf5V5Dg", ln: "spanish" },
         ],
       },
     },
