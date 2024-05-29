@@ -1,104 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>MyTuber: ¿Qué hora es?</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo.png" />
+    <meta property="og:title" content="MyTuber: ¿Qué hora es?" />
+    <meta
+      property="og:description"
+      content="How to say the current time in Spanish? Learn how to tell it in Spanish with MyTuber!"
+    />
+    <meta property="og:image" content="../img/logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <title>¿Qué hora es?</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-      const date = new Date();
-      const hours = date.getHours();
-      const minutes = date.getMinutes();
-
-      let part1 =
-        (hours === 0 || hours === 12) && minutes === 0
-          ? "Es"
-          : hours === 1 || hours === 13
-          ? "Es la"
-          : "Son las";
-      let part2 =
-        hours === 0 && minutes === 0
-          ? "medianoche"
-          : hours === 12 && minutes === 0
-          ? "mediodía"
-          : hours === 0 || hours === 12
-          ? "doce"
-          : hours === 1 || hours === 13
-          ? "una"
-          : hours === 2 || hours === 14
-          ? "dos"
-          : hours === 3 || hours === 15
-          ? "tres"
-          : hours === 4 || hours === 16
-          ? "cuatro"
-          : hours === 5 || hours === 17
-          ? "cinco"
-          : hours === 6 || hours === 18
-          ? "seis"
-          : hours === 7 || hours === 19
-          ? "siete"
-          : hours === 8 || hours === 20
-          ? "ocho"
-          : hours === 9 || hours === 21
-          ? "nueve"
-          : hours === 10 || hours === 22
-          ? "diez"
-          : hours === 11 || hours === 23
-          ? "once"
-          : "";
-      let part3 =
-        minutes === 0
-          ? ""
-          : minutes === 1
-          ? "y uno"
-          : minutes === 2
-          ? "y dos"
-          : minutes === 3
-          ? "y tres"
-          : minutes === 4
-          ? "y cuatro"
-          : minutes === 5
-          ? "y cinco"
-          : "";
-      let part4 =
-        (hours === 0 || hours === 12) && minutes === 0
-          ? ""
-          : hours === 0 ||
-            hours === 1 ||
-            hours === 2 ||
-            hours === 3 ||
-            hours === 4 ||
-            hours === 5
-          ? "de la madrugada"
-          : hours === 6 ||
-            hours === 7 ||
-            hours === 8 ||
-            hours === 9 ||
-            hours === 10 ||
-            hours === 11
-          ? "de la mañana"
-          : hours === 12 ||
-            hours === 13 ||
-            hours === 14 ||
-            hours === 15 ||
-            hours === 16 ||
-            hours === 17 ||
-            hours === 18
-          ? "de la tarde"
-          : hours === 19 ||
-            hours === 20 ||
-            hours === 21 ||
-            hours === 22 ||
-            hours === 23
-          ? "de la noche"
-          : "";
-      $(document).ready(function () {
-        $("title").html(`¿Qué hora es? ${part1} ${part2} ${part3} ${part4}`);
-      });
-
-      setInterval(function () {
-        location.reload();
-      }, 1000 * 60);
-    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>¿Qué hora es?</h1>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
