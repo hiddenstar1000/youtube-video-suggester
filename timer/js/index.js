@@ -167,8 +167,7 @@ function setTime() {
       : minutes === 59
       ? "y cincuenta y nueve"
       : "";
-  const part4 =
-    minutes === 15 ? " (y cuarto)" : minutes === 30 ? " (y media)" : "";
+  const part4 = minutes === 15 ? "y cuarto" : minutes === 30 ? "y media" : "";
   const part5 =
     (hours === 0 || hours === 12) && minutes === 0
       ? ""
@@ -202,7 +201,9 @@ function setTime() {
       ? "de la noche"
       : "";
 
-  const message = `¿Qué hora es? ${part1} ${part2} ${part3}${part4} ${part5}`;
+  let message = `¿Qué hora es? ${part1} ${part2} ${part3} ${part5}`;
+  message =
+    part4 !== "" ? `${message} / ${part1} ${part2} ${part4} ${part5}` : message;
 
   $("title").html(`MyTuber: ${message}`);
   $("h1").html(`${message}`);
