@@ -58,8 +58,118 @@ function setTime() {
       ? "y cuatro"
       : minutes === 5
       ? "y cinco"
+      : minutes === 6
+      ? "y seis"
+      : minutes === 7
+      ? "y siete"
+      : minutes === 8
+      ? "y ocho"
+      : minutes === 9
+      ? "y nueve"
+      : minutes === 10
+      ? "y diez"
+      : minutes === 11
+      ? "y once"
+      : minutes === 12
+      ? "y doce"
+      : minutes === 13
+      ? "y trece"
+      : minutes === 14
+      ? "y catorce"
+      : minutes === 15
+      ? "y quince"
+      : minutes === 16
+      ? "y dieciséis"
+      : minutes === 17
+      ? "y diecisiete"
+      : minutes === 18
+      ? "y dieciocho"
+      : minutes === 19
+      ? "y diecinueve"
+      : minutes === 20
+      ? "y veinte"
+      : minutes === 21
+      ? "y veintiuno"
+      : minutes === 22
+      ? "y veintidós"
+      : minutes === 23
+      ? "y veintitrés"
+      : minutes === 24
+      ? "y veinticuatro"
+      : minutes === 25
+      ? "y veinticinco"
+      : minutes === 26
+      ? "y veintiséis"
+      : minutes === 27
+      ? "y veintisiete"
+      : minutes === 28
+      ? "y veintiocho"
+      : minutes === 29
+      ? "y veintinueve"
+      : minutes === 30
+      ? "y treinta"
+      : minutes === 31
+      ? "y treinta y uno"
+      : minutes === 32
+      ? "y treinta y dos"
+      : minutes === 33
+      ? "y treinta y tres"
+      : minutes === 34
+      ? "y treinta y cuatro"
+      : minutes === 35
+      ? "y treinta y cinco"
+      : minutes === 36
+      ? "y treinta y seis"
+      : minutes === 37
+      ? "y treinta y siete"
+      : minutes === 38
+      ? "y treinta y ocho"
+      : minutes === 39
+      ? "y treinta y nueve"
+      : minutes === 40
+      ? "y cuarenta"
+      : minutes === 41
+      ? "y cuarenta y uno"
+      : minutes === 42
+      ? "y cuarenta y dos"
+      : minutes === 43
+      ? "y cuarenta y tres"
+      : minutes === 44
+      ? "y cuarenta y cuatro"
+      : minutes === 45
+      ? "y cuarenta y cinco"
+      : minutes === 46
+      ? "y cuarenta y seis"
+      : minutes === 47
+      ? "y cuarenta y siete"
+      : minutes === 48
+      ? "y cuarenta y ocho"
+      : minutes === 49
+      ? "y cuarenta y nueve"
+      : minutes === 50
+      ? "y cincuenta"
+      : minutes === 51
+      ? "y cincuenta y uno"
+      : minutes === 52
+      ? "y cincuenta y dos"
+      : minutes === 53
+      ? "y cincuenta y tres"
+      : minutes === 54
+      ? "y cincuenta y cuatro"
+      : minutes === 55
+      ? "y ciencuenta y cinco"
+      : minutes === 56
+      ? "y cincuenta y seis"
+      : minutes === 57
+      ? "y ciencuenta y siete"
+      : minutes === 58
+      ? "y cincuenta y ocho"
+      : minutes === 59
+      ? "y cincuenta y nueve"
       : "";
   const part4 =
+    minutes === 15 ? " (y cuarto)" : minutes === 30 ? " (y media)" : "";
+  const part5 =
     (hours === 0 || hours === 12) && minutes === 0
       ? ""
       : hours === 0 ||
@@ -92,7 +202,7 @@ function setTime() {
       ? "de la noche"
       : "";
 
-  const message = `¿Qué hora es? ${part1} ${part2} ${part3} ${part4}`;
+  const message = `¿Qué hora es? ${part1} ${part2} ${part3}${part4} ${part5}`;
 
   $("title").html(`MyTuber: ${message}`);
   $("h1").html(`${message}`);
