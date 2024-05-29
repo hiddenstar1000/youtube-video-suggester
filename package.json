@@ -15,6 +15,7 @@
     "build-css-ft": "minify fairy-tales/css/index.css > fairy-tales/css/index.min.css",
     "build-js-ft": "minify fairy-tales/js/index.js > fairy-tales/js/index.min.js",
     "build-js-tm": "minify timer/js/index.js > timer/js/index.min.js",
+    "build-css-tm": "minify timer/css/index.css > timer/css/index.min.css",
     "prepare": "husky"
   },
   "repository": {
