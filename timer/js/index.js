@@ -247,12 +247,9 @@ function setTime() {
       ? "de la noche"
       : "";
   const part5m =
-    hours === 23 ||
-    hours === 0 ||
-    hours === 1 ||
-    hours === 2 ||
-    hours === 3 ||
-    hours === 4
+    hours === 23 || hours === 11
+      ? ""
+      : hours === 0 || hours === 1 || hours === 2 || hours === 3 || hours === 4
       ? "de la madrugada"
       : hours === 5 ||
         hours === 6 ||
@@ -261,8 +258,7 @@ function setTime() {
         hours === 9 ||
         hours === 10
       ? "de la mañana"
-      : hours === 11 ||
-        hours === 12 ||
+      : hours === 12 ||
         hours === 13 ||
         hours === 14 ||
         hours === 15 ||
