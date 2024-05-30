@@ -18,8 +18,6 @@ function setTime() {
   const part1m =
     minutes !== 40 && minutes !== 45 && minutes !== 50 && minutes !== 55
       ? ""
-      : hours === 23 || hours === 11
-      ? "Es"
       : hours === 0 || hours === 12
       ? "Es la"
       : "Son las";
@@ -54,10 +52,8 @@ function setTime() {
       ? "once"
       : "";
   const part2m =
-    hours === 11
-      ? "mediodía"
-      : hours === 23
-      ? "medianoche"
+    hours === 11 || hours === 23
+      ? "doce"
       : hours === 0 || hours === 12
       ? "una"
       : hours === 1 || hours === 13
@@ -247,9 +243,7 @@ function setTime() {
       ? "de la noche"
       : "";
   const part5m =
-    hours === 23 || hours === 11
-      ? ""
-      : hours === 0 || hours === 1 || hours === 2 || hours === 3 || hours === 4
+    hours === 0 || hours === 1 || hours === 2 || hours === 3 || hours === 4
       ? "de la madrugada"
       : hours === 5 ||
         hours === 6 ||
@@ -258,7 +252,8 @@ function setTime() {
         hours === 9 ||
         hours === 10
       ? "de la mañana"
-      : hours === 12 ||
+      : hours === 11 ||
+        hours === 12 ||
         hours === 13 ||
         hours === 14 ||
         hours === 15 ||
@@ -269,7 +264,8 @@ function setTime() {
         hours === 19 ||
         hours === 20 ||
         hours === 21 ||
-        hours === 22
+        hours === 22 ||
+        hours === 23
       ? "de la noche"
       : "";
 
