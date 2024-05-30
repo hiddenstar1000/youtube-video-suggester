@@ -18,6 +18,8 @@ function setTime() {
   const part1m =
     minutes !== 40 && minutes !== 45 && minutes !== 50 && minutes !== 55
       ? ""
+      : hours === 23 || hours === 11
+      ? "Es"
       : hours === 0 || hours === 12
       ? "Es la"
       : "Son las";
@@ -52,8 +54,10 @@ function setTime() {
       ? "once"
       : "";
   const part2m =
-    hours === 23 || hours === 11
-      ? "doce"
+    hours === 11
+      ? "mediodía"
+      : hours === 23
+      ? "medianoche"
       : hours === 0 || hours === 12
       ? "una"
       : hours === 1 || hours === 13
@@ -242,13 +246,43 @@ function setTime() {
         hours === 23
       ? "de la noche"
       : "";
+  const part5m =
+    hours === 23 ||
+    hours === 0 ||
+    hours === 1 ||
+    hours === 2 ||
+    hours === 3 ||
+    hours === 4
+      ? "de la madrugada"
+      : hours === 5 ||
+        hours === 6 ||
+        hours === 7 ||
+        hours === 8 ||
+        hours === 9 ||
+        hours === 10
+      ? "de la mañana"
+      : hours === 11 ||
+        hours === 12 ||
+        hours === 13 ||
+        hours === 14 ||
+        hours === 15 ||
+        hours === 16 ||
+        hours === 17
+      ? "de la tarde"
+      : hours === 18 ||
+        hours === 19 ||
+        hours === 20 ||
+        hours === 21 ||
+        hours === 22
+      ? "de la noche"
+      : "";
 
   let message = `¿Qué hora es? ${part1} ${part2} ${part3} ${part5}`;
   message =
     part4 !== "" ? `${message} / ${part1} ${part2} ${part4} ${part5}` : message;
   message =
     part1m !== ""
-      ? `${message} / ${part1m} ${part2m} ${part4m} ${part5}`
+      ? `${message} / ${part1m} ${part2m} ${part4m} ${part5m}`
       : message;
 
   $("title").html(`MyTuber: ${message}`);
