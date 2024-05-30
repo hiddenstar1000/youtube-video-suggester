@@ -247,7 +247,9 @@ function setTime() {
   message =
     part4 !== "" ? `${message} / ${part1} ${part2} ${part4} ${part5}` : message;
   message =
-    part1m !== "" ? `${message} / ${part1m} ${part4m} ${part5}` : message;
+    part1m !== ""
+      ? `${message} / ${part1m} ${part2m} ${part4m} ${part5}`
+      : message;
 
   $("title").html(`MyTuber: ${message}`);
   $("h1").html(`${message}`);
