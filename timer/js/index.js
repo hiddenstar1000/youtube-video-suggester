@@ -1,7 +1,6 @@
 $(document).ready(function () {
-  const date = new Date();
-
   setInterval(function () {
+    const date = new Date();
     setTime(date);
     readTime(date);
   }, 1000);
