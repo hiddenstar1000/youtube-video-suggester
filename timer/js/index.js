@@ -2,9 +2,13 @@ $(document).ready(function () {
   setInterval(function () {
     setTime();
   }, 1000);
+
+  $("body").click(function () {
+    setTime(false);
+  });
 });
 
-function setTime() {
+function setTime(isHiddenPart5 = true) {
   const date = new Date();
   const hours = date.getHours();
   const minutes = date.getMinutes();
@@ -269,12 +273,20 @@ function setTime() {
       ? "de la noche"
       : "";
 
-  let message = `¿Qué hora es? ${part1} ${part2} ${part3} ${part5}`;
+  let message = isHiddenPart5
+    ? `¿Qué hora es? ${part1} ${part2} ${part3}`
+    : `¿Qué hora es? ${part1} ${part2} ${part3} ${part5}`;
   message =
-    part4 !== "" ? `${message} / ${part1} ${part2} ${part4} ${part5}` : message;
+    part4 !== ""
+      ? isHiddenPart5
+        ? `${message} / ${part1} ${part2} ${part4}`
+        : `${message} / ${part1} ${part2} ${part4} ${part5}`
+      : message;
   message =
     part1m !== ""
-      ? `${message} / ${part1m} ${part2m} ${part4m} ${part5m}`
+      ? isHiddenPart5
+        ? `${message} / ${part1m} ${part2m} ${part4m}`
+        : `${message} / ${part1m} ${part2m} ${part4m} ${part5m}`
       : message;
 
   $("title").html(`MyTuber: ${message}`);
