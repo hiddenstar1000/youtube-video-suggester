@@ -296,7 +296,8 @@ function setTime(date, isHiddenPart5 = true) {
 
 function readTime(date) {
   const minutes = date.getMinutes();
-  if (minutes % 5 !== 0) return;
+  const seconds = date.getSeconds();
+  if (seconds !== 0 || minutes % 5 !== 0) return;
 
   const message = $("h2").html();
 
