@@ -307,7 +307,7 @@ function readTime(date) {
   // Select a voice
   const voices = speechSynthesis.getVoices();
   utterance.voice = voices[voices.length - 1]; // Choose a specific voice
-  utterance.lang = "es-MX";
+  // utterance.lang = "es-CO";
 
   // Speak the text
   speechSynthesis.speak(utterance);
