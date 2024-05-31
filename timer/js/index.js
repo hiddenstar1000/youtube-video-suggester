@@ -6,7 +6,8 @@ $(document).ready(function () {
   }, 1000);
 
   $("body").click(function () {
-    setTime(false);
+    const date = new Date();
+    setTime(date, false);
   });
 });
 
@@ -293,7 +294,7 @@ function setTime(date, isHiddenPart5 = true) {
   $("h2").html(`${message}`);
 }
 
-function readTime() {
+function readTime(date) {
   const minutes = date.getMinutes();
   if (minutes % 5 !== 0) return;
 
