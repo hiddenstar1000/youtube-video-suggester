@@ -3,9 +3,6 @@ $(document).ready(function () {
 
   setInterval(function () {
     setTime(date);
-  }, 1000);
-
-  setInterval(function () {
     readTime(date);
   }, 1000);
 
