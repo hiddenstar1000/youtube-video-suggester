@@ -1,22 +1,22 @@
 $(document).ready(function () {
+  const date = new Date();
+
   setInterval(function () {
-    setTime();
+    setTime(date);
   }, 1000);
 
   setInterval(function () {
-    readTime();
-  }, 1000 * 60);
+    readTime(date);
+  }, 1000);
 
   $("body").click(function () {
     setTime(false);
   });
 });
 
-function setTime(isHiddenPart5 = true) {
-  const date = new Date();
+function setTime(date, isHiddenPart5 = true) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
-
   const part1 =
     (hours === 0 || hours === 12) && minutes === 0
       ? "Es"
@@ -298,6 +298,9 @@ function setTime(isHiddenPart5 = true) {
 }
 
 function readTime() {
+  const minutes = date.getMinutes();
+  if (minutes % 5 !== 0) return;
+
   const message = $("h2").html();
 
   // Create a SpeechSynthesisUtterance
