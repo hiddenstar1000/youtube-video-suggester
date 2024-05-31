@@ -3,6 +3,10 @@ $(document).ready(function () {
     setTime();
   }, 1000);
 
+  setInterval(function () {
+    readTime();
+  }, 1000 * 60);
+
   $("body").click(function () {
     setTime(false);
   });
@@ -274,8 +278,8 @@ function setTime(isHiddenPart5 = true) {
       : "";
 
   let message = isHiddenPart5
-    ? `¿Qué hora es? ${part1} ${part2} ${part3}`
-    : `¿Qué hora es? ${part1} ${part2} ${part3} ${part5}`;
+    ? `${part1} ${part2} ${part3}`
+    : `${part1} ${part2} ${part3} ${part5}`;
   message =
     part4 !== ""
       ? isHiddenPart5
@@ -289,6 +293,21 @@ function setTime(isHiddenPart5 = true) {
         : `${message} / ${part1m} ${part2m} ${part4m} ${part5m}`
       : message;
 
-  $("title").html(`MyTuber: ${message}`);
-  $("h1").html(`${message}`);
+  $("title").html(`MyTuber: ¿Qué hora es? ${message}`);
+  $("h2").html(`${message}`);
+}
+
+function readTime() {
+  const message = $("h2").html();
+
+  // Create a SpeechSynthesisUtterance
+  const utterance = new SpeechSynthesisUtterance(message.split("/")[0]);
+
+  // Select a voice
+  const voices = speechSynthesis.getVoices();
+  utterance.voice = voices[2]; // Choose a specific voice
+  utterance.lang = "es-ES";
+
+  // Speak the text
+  speechSynthesis.speak(utterance);
 }
