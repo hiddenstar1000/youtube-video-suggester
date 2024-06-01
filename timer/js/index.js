@@ -309,7 +309,7 @@ function readTime(date) {
   utterance.voice = voices.filter(
     (voice) => voice.name === "Google español"
   )[0]; // Choose a specific voice
-  utterance.lang = "es-CO";
+  utterance.lang = "es";
 
   // Speak the text
   speechSynthesis.speak(utterance);
