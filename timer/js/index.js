@@ -1,17 +1,13 @@
-$(document).ready(function () {
-  setInterval(function () {
-    const date = new Date();
-    setTime(date);
-    readTime(date);
-  }, 1000);
+let currentSetInterval = null;
 
-  $("body").click(function () {
-    const date = new Date();
-    setTime(date, false);
+$(document).ready(function () {
+  init();
+  $("#timerIntervalRange").on("change", function () {
+    timerIntervalRange();
   });
 });
 
-function setTime(date, isHiddenPart5 = true) {
+function setTime(date, isHiddenPart5) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
   const part1 =
@@ -294,10 +290,15 @@ function setTime(date, isHiddenPart5 = true) {
   $("h2").html(`${message}`);
 }
 
-function readTime(date) {
+function readTime(date, readTimeInterval) {
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
-  if (seconds !== 0 || minutes % 5 !== 0) return;
+  if (
+    readTimeInterval === 0 ||
+    seconds !== 0 ||
+    minutes % readTimeInterval !== 0
+  )
+    return;
 
   const messageContent = $("h2").html();
   const messages = messageContent.split("/");
@@ -316,4 +317,53 @@ function readTime(date) {
     // Speak the text
     speechSynthesis.speak(utterance);
   }
+}
+
+function init() {
+  const timerSettings = JSON.parse(localStorage.getItem("timerSettings")) || {
+    readTimeInterval: 5,
+    isHiddenPart5: true,
+  };
+
+  currentSetInterval = setInterval(function () {
+    const date = new Date();
+    setTime(date, timerSettings.isHiddenPart5);
+    readTime(date, timerSettings.readTimeInterval);
+  }, 1000);
+
+  const timerIntervalRangeLabelMessage =
+    timerSettings.readTimeInterval === 0
+      ? "No me digas la hora"
+      : timerSettings.readTimeInterval === 1
+      ? "Dime la hora una vez cada minuto"
+      : `Dime la hora una vez cada ${timerSettings.readTimeInterval} minutos`;
+
+  $("#timerIntervalRange").val(timerSettings.readTimeInterval);
+  $("#timerIntervalRangeLabel").html(timerIntervalRangeLabelMessage);
+}
+
+function timerIntervalRange() {
+  clearInterval(currentSetInterval);
+
+  const timerSettings = {
+    readTimeInterval: parseInt($("#timerIntervalRange").val()),
+    isHiddenPart5: true,
+  };
+
+  currentSetInterval = setInterval(function () {
+    const date = new Date();
+    setTime(date, timerSettings.isHiddenPart5);
+    readTime(date, timerSettings.readTimeInterval);
+  }, 1000);
+
+  const timerIntervalRangeLabelMessage =
+    timerSettings.readTimeInterval === 0
+      ? "No me digas la hora"
+      : timerSettings.readTimeInterval === 1
+      ? "Dime la hora una vez cada minuto"
+      : `Dime la hora una vez cada ${timerSettings.readTimeInterval} minutos`;
+
+  $("#timerIntervalRangeLabel").html(timerIntervalRangeLabelMessage);
+
+  localStorage.setItem("timerSettings", JSON.stringify(timerSettings));
 }
