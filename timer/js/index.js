@@ -299,18 +299,21 @@ function readTime(date) {
   const seconds = date.getSeconds();
   if (seconds !== 0 || minutes % 5 !== 0) return;
 
-  const message = $("h2").html();
+  const messageContent = $("h2").html();
+  const messages = messageContent.split("/");
 
-  // Create a SpeechSynthesisUtterance
-  const utterance = new SpeechSynthesisUtterance(message.split("/")[0]);
+  for (const message of messages) {
+    // Create a SpeechSynthesisUtterance
+    const utterance = new SpeechSynthesisUtterance(message);
 
-  // Select a voice
-  const voices = speechSynthesis.getVoices();
-  utterance.voice = voices.filter(
-    (voice) => voice.name === "Google español"
-  )[0]; // Choose a specific voice
-  utterance.lang = "es";
+    // Select a voice
+    const voices = speechSynthesis.getVoices();
+    utterance.voice = voices.filter(
+      (voice) => voice.name === "Google español"
+    )[0]; // Choose a specific voice
+    utterance.lang = "es";
 
-  // Speak the text
-  speechSynthesis.speak(utterance);
+    // Speak the text
+    speechSynthesis.speak(utterance);
+  }
 }
