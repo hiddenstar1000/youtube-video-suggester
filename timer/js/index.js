@@ -329,7 +329,7 @@ function init() {
     isHiddenPart5: true,
   };
 
-  setDate(new Date());
+  setDate(new Date(), timerSettings.readTimeInterval);
 
   currentSetInterval = setInterval(function () {
     const date = new Date();
@@ -427,10 +427,10 @@ function setDate(date) {
   );
 }
 
-function readDate(date) {
+function readDate(date, readTimeInterval) {
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
-  if (seconds !== 0 || minutes !== 0) return;
+  if (readTimeInterval === 0 || seconds !== 0 || minutes !== 0) return;
 
   const message = $("#dateA").html();
   readText(message);
