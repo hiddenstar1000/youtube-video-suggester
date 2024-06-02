@@ -359,6 +359,7 @@ function timerIntervalRange() {
 
   currentSetInterval = setInterval(function () {
     const date = new Date();
+    readDate(date);
     setTime(date, timerSettings.isHiddenPart5);
     readTime(date, timerSettings.readTimeInterval);
   }, 1000);
