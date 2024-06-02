@@ -287,7 +287,7 @@ function setTime(date, isHiddenPart5) {
       : message;
 
   $("title").html(`MyTuber: ¿Qué hora es? ${message}`);
-  $("h2").html(`${message}`);
+  $("#timeA").html(`${message}`);
 }
 
 function readTime(date, readTimeInterval) {
@@ -300,23 +300,27 @@ function readTime(date, readTimeInterval) {
   )
     return;
 
-  const messageContent = $("h2").html();
+  const messageContent = $("#timeA").html();
   const messages = messageContent.split("/");
 
   for (const message of messages) {
-    // Create a SpeechSynthesisUtterance
-    const utterance = new SpeechSynthesisUtterance(message);
-
-    // Select a voice
-    const voices = speechSynthesis.getVoices();
-    utterance.voice = voices.filter(
-      (voice) => voice.name === "Google español"
-    )[0]; // Choose a specific voice
-    utterance.lang = "es";
-
-    // Speak the text
-    speechSynthesis.speak(utterance);
+    readText(message);
   }
+}
+
+function readText(message) {
+  // Create a SpeechSynthesisUtterance
+  const utterance = new SpeechSynthesisUtterance(message.trim());
+
+  // Select a voice
+  const voices = speechSynthesis.getVoices();
+  utterance.voice = voices.filter(
+    (voice) => voice.name === "Google español"
+  )[0]; // Choose a specific voice
+  utterance.lang = "es";
+
+  // Speak the text
+  speechSynthesis.speak(utterance);
 }
 
 function init() {
@@ -325,8 +329,11 @@ function init() {
     isHiddenPart5: true,
   };
 
+  setDate(new Date());
+
   currentSetInterval = setInterval(function () {
     const date = new Date();
+    readDate(date);
     setTime(date, timerSettings.isHiddenPart5);
     readTime(date, timerSettings.readTimeInterval);
   }, 1000);
@@ -366,4 +373,65 @@ function timerIntervalRange() {
   $("#timerIntervalRangeLabel").html(timerIntervalRangeLabelMessage);
 
   localStorage.setItem("timerSettings", JSON.stringify(timerSettings));
+}
+
+function setDate(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const dateValue = date.getDate();
+  const day = date.getDay();
+  const monthName =
+    month === 0
+      ? "enero"
+      : month === 1
+      ? "febrero"
+      : month === 2
+      ? "marzo"
+      : month === 3
+      ? "abril"
+      : month === 4
+      ? "mayo"
+      : month === 5
+      ? "junio"
+      : month === 6
+      ? "julio"
+      : month === 7
+      ? "agosto"
+      : month === 8
+      ? "septiembre"
+      : month === 9
+      ? "octubre"
+      : month === 10
+      ? "noviembre"
+      : month === 11
+      ? "diciembre"
+      : "";
+  const dayName =
+    day === 0
+      ? "domingo"
+      : day === 1
+      ? "lunes"
+      : day === 2
+      ? "martes"
+      : day === 3
+      ? "miércoles"
+      : day === 4
+      ? "jueves"
+      : day === 5
+      ? "viernes"
+      : day === 6
+      ? "sábado"
+      : "";
+  $("#dateA").html(
+    `Hoy es ${dayName}, el ${dateValue} de ${monthName} de ${year}`
+  );
+}
+
+function readDate(date) {
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  if (seconds !== 0 || minutes !== 0) return;
+
+  const message = $("#dateA").html();
+  readText(message);
 }
