@@ -329,10 +329,9 @@ function init() {
     isHiddenPart5: true,
   };
 
-  setDate(new Date(), timerSettings.readTimeInterval);
-
   currentSetInterval = setInterval(function () {
     const date = new Date();
+    setDate(date, timerSettings.readTimeInterval);
     readDate(date, timerSettings.readTimeInterval);
     setTime(date, timerSettings.isHiddenPart5);
     readTime(date, timerSettings.readTimeInterval);
@@ -359,6 +358,7 @@ function timerIntervalRange() {
 
   currentSetInterval = setInterval(function () {
     const date = new Date();
+    setDate(date, timerSettings.readTimeInterval);
     readDate(date, timerSettings.readTimeInterval);
     setTime(date, timerSettings.isHiddenPart5);
     readTime(date, timerSettings.readTimeInterval);
