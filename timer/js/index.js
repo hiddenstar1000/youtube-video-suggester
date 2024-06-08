@@ -309,8 +309,9 @@ function readTime(date, readTimeInterval) {
 }
 
 function readText(message) {
+  const trimmedMessage = message.trim();
   // Create a SpeechSynthesisUtterance
-  const utterance = new SpeechSynthesisUtterance(message.trim());
+  const utterance = new SpeechSynthesisUtterance(trimmedMessage);
 
   // Select a voice
   const voices = speechSynthesis.getVoices();
@@ -321,6 +322,7 @@ function readText(message) {
 
   // Speak the text
   speechSynthesis.speak(utterance);
+  console.log(`'${trimmedMessage}' is being read`);
 }
 
 function init() {
