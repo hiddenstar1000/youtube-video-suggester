@@ -8,7 +8,7 @@ $(document).ready(function () {
   });
 
   $("body").on("click", function () {
-    readDateAndTime();
+    activate();
   });
 });
 
@@ -326,27 +326,17 @@ function readText(message) {
 }
 
 function init() {
-  const timerSettings = JSON.parse(localStorage.getItem("timerSettings")) || {
-    readTimeInterval: 5,
-    isHiddenPart5: true,
-  };
-
   currentSetInterval = setInterval(function () {
     const date = new Date();
-    setDate(date, timerSettings.readTimeInterval);
-    readDateOnTime(date, timerSettings.readTimeInterval);
-    setTime(date, timerSettings.isHiddenPart5);
-    readTimeOnTime(date, timerSettings.readTimeInterval);
+    setDate(date, 0);
+    readDateOnTime(date, 0);
+    setTime(date, true);
+    readTimeOnTime(date, 0);
   }, 1000);
 
   const timerIntervalRangeLabelMessage =
-    timerSettings.readTimeInterval === 0
-      ? "No me digas la hora"
-      : timerSettings.readTimeInterval === 1
-      ? "Dime la hora una vez cada minuto"
-      : `Dime la hora una vez cada ${timerSettings.readTimeInterval} minutos`;
-
-  $("#timerIntervalRange").val(timerSettings.readTimeInterval);
+    "La lectura de tiempo está deshabilitada. Haga clic para habilitar";
+  $("#timerIntervalRange").val(0);
   $("#timerIntervalRangeLabel").html(timerIntervalRangeLabelMessage);
 }
 
@@ -452,7 +442,32 @@ function readTime() {
   }
 }
 
-function readDateAndTime() {
+function activate() {
+  clearInterval(currentSetInterval);
+
+  const timerSettings = JSON.parse(localStorage.getItem("timerSettings")) || {
+    readTimeInterval: 5,
+    isHiddenPart5: true,
+  };
+
+  currentSetInterval = setInterval(function () {
+    const date = new Date();
+    setDate(date, timerSettings.readTimeInterval);
+    readDateOnTime(date, timerSettings.readTimeInterval);
+    setTime(date, timerSettings.isHiddenPart5);
+    readTimeOnTime(date, timerSettings.readTimeInterval);
+  }, 1000);
+
+  const timerIntervalRangeLabelMessage =
+    timerSettings.readTimeInterval === 0
+      ? "No me digas la hora"
+      : timerSettings.readTimeInterval === 1
+      ? "Dime la hora una vez cada minuto"
+      : `Dime la hora una vez cada ${timerSettings.readTimeInterval} minutos`;
+
+  $("#timerIntervalRange").val(timerSettings.readTimeInterval);
+  $("#timerIntervalRangeLabel").html(timerIntervalRangeLabelMessage);
+
   readDate();
   readTime();
 }
