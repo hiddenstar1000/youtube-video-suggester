@@ -7,7 +7,7 @@ $(document).ready(function () {
     timerIntervalRange();
   });
 
-  $("body").on("dblclick", function () {
+  $("#activateButton").on("click", function () {
     activate();
   });
 });
@@ -334,8 +334,7 @@ function init() {
     readTimeOnTime(date, 0);
   }, 1000);
 
-  const timerIntervalRangeLabelMessage =
-    "Decir la hora está deshabilitado. Haga doble clic o doble pestaña para habilitarlo";
+  const timerIntervalRangeLabelMessage = "Decir la hora está deshabilitado";
   $("#timerIntervalRange").val(0);
   $("#timerIntervalRangeLabel").html(timerIntervalRangeLabelMessage);
 }
@@ -443,6 +442,7 @@ function readTime() {
 }
 
 function activate() {
+  $("#activateButton").prop("disabled", true);
   clearInterval(currentSetInterval);
 
   const timerSettings = JSON.parse(localStorage.getItem("timerSettings")) || {
@@ -470,4 +470,6 @@ function activate() {
 
   readDate();
   readTime();
+
+  $("#activateButton").addClass("d-none");
 }
