@@ -15,24 +15,17 @@ $(document).ready(function () {
 function setTime(date, isHiddenPart5) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
-  const part1 =
-    (hours === 0 || hours === 12) && minutes === 0
-      ? "Es"
-      : hours === 1 || hours === 13
-      ? "Es la"
-      : "Son las";
+  const part1 = hours === 1 || hours === 13 ? "Es la" : "Son las";
   const part1m =
     minutes !== 40 && minutes !== 45 && minutes !== 50 && minutes !== 55
       ? ""
+      : (hours === 0 || hours === 12) && minutes === 0
+      ? "Es"
       : hours === 0 || hours === 12
       ? "Es la"
       : "Son las";
   const part2 =
-    hours === 0 && minutes === 0
-      ? "medianoche"
-      : hours === 12 && minutes === 0
-      ? "mediodía"
-      : hours === 0 || hours === 12
+    hours === 0 || hours === 12
       ? "doce"
       : hours === 1 || hours === 13
       ? "una"
@@ -58,7 +51,11 @@ function setTime(date, isHiddenPart5) {
       ? "once"
       : "";
   const part2m =
-    hours === 11 || hours === 23
+    hours === 0 && minutes === 0
+      ? "medianoche"
+      : hours === 12 && minutes === 0
+      ? "mediodía"
+      : hours === 11 || hours === 23
       ? "doce"
       : hours === 0 || hours === 12
       ? "una"
@@ -279,7 +276,7 @@ function setTime(date, isHiddenPart5) {
     ? `${part1} ${part2} ${part3}`
     : `${part1} ${part2} ${part3} ${part5}`;
   message =
-    part4 !== ""
+    part4 !== "" || ((hours === 0 || hours === 12) && minutes === 0)
       ? isHiddenPart5
         ? `${message} / ${part1} ${part2} ${part4}`
         : `${message} / ${part1} ${part2} ${part4} ${part5}`
