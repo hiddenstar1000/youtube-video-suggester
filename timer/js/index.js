@@ -10,6 +10,10 @@ $(document).ready(function () {
   $("#activateButton").on("click", function () {
     activate();
   });
+
+  $("#deactivateButton").on("click", function () {
+    deactivate();
+  });
 });
 
 function setTime(date, isHiddenPart5) {
@@ -469,6 +473,8 @@ function activate() {
   readTime();
 
   $("#activateButton").addClass("d-none");
+  $("#deactivateButton").prop("disabled", false);
+  $("#deactivateButton").removeClass("d-none");
 }
 
 function getDate() {
@@ -487,4 +493,17 @@ function getDate() {
   }
 
   return date;
+}
+
+function deactivate() {
+  $("#deactivateButton").prop("disabled", true);
+  clearInterval(currentSetInterval);
+
+  const timerIntervalRangeLabelMessage = "Decir la hora está deshabilitado";
+  $("#timerIntervalRange").val(0);
+  $("#timerIntervalRangeLabel").html(timerIntervalRangeLabelMessage);
+
+  $("#deactivateButton").addClass("d-none");
+  $("#activateButton").prop("disabled", false);
+  $("#activateButton").removeClass("d-none");
 }
