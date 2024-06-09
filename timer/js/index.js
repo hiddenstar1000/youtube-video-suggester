@@ -7,7 +7,7 @@ $(document).ready(function () {
     timerIntervalRange();
   });
 
-  $("body").on("click", function () {
+  $("body").on("dblclick", function () {
     activate();
   });
 });
@@ -335,7 +335,7 @@ function init() {
   }, 1000);
 
   const timerIntervalRangeLabelMessage =
-    "La lectura de tiempo está deshabilitada. Haga clic para habilitar";
+    "Decir la hora está deshabilitado. Haga doble clic o doble pestaña para habilitarlo";
   $("#timerIntervalRange").val(0);
   $("#timerIntervalRangeLabel").html(timerIntervalRangeLabelMessage);
 }
