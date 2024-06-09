@@ -17,10 +17,10 @@ function setTime(date, isHiddenPart5) {
   const minutes = date.getMinutes();
   const part1 = hours === 1 || hours === 13 ? "Es la" : "Son las";
   const part1m =
-    minutes !== 40 && minutes !== 45 && minutes !== 50 && minutes !== 55
-      ? ""
-      : (hours === 0 || hours === 12) && minutes === 0
+    (hours === 0 || hours === 12) && minutes === 0
       ? "Es"
+      : minutes !== 40 && minutes !== 45 && minutes !== 50 && minutes !== 55
+      ? ""
       : hours === 0 || hours === 12
       ? "Es la"
       : "Son las";
@@ -276,13 +276,13 @@ function setTime(date, isHiddenPart5) {
     ? `${part1} ${part2} ${part3}`
     : `${part1} ${part2} ${part3} ${part5}`;
   message =
-    part4 !== "" || ((hours === 0 || hours === 12) && minutes === 0)
+    part4 !== ""
       ? isHiddenPart5
         ? `${message} / ${part1} ${part2} ${part4}`
         : `${message} / ${part1} ${part2} ${part4} ${part5}`
       : message;
   message =
-    part1m !== ""
+    part1m !== "" || ((hours === 0 || hours === 12) && minutes === 0)
       ? isHiddenPart5
         ? `${message} / ${part1m} ${part2m} ${part4m}`
         : `${message} / ${part1m} ${part2m} ${part4m} ${part5m}`
