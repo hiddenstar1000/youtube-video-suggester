@@ -2,8 +2,13 @@ let currentSetInterval = null;
 
 $(document).ready(function () {
   init();
+
   $("#timerIntervalRange").on("change", function () {
     timerIntervalRange();
+  });
+
+  $("body").on("click", function () {
+    readDateAndTime();
   });
 });
 
@@ -290,7 +295,7 @@ function setTime(date, isHiddenPart5) {
   $("#timeA").html(`${message}`);
 }
 
-function readTime(date, readTimeInterval) {
+function readTimeOnTime(date, readTimeInterval) {
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
   if (
@@ -300,12 +305,7 @@ function readTime(date, readTimeInterval) {
   )
     return;
 
-  const messageContent = $("#timeA").html();
-  const messages = messageContent.split("/");
-
-  for (const message of messages) {
-    readText(message);
-  }
+  readTime();
 }
 
 function readText(message) {
@@ -334,9 +334,9 @@ function init() {
   currentSetInterval = setInterval(function () {
     const date = new Date();
     setDate(date, timerSettings.readTimeInterval);
-    readDate(date, timerSettings.readTimeInterval);
+    readDateOnTime(date, timerSettings.readTimeInterval);
     setTime(date, timerSettings.isHiddenPart5);
-    readTime(date, timerSettings.readTimeInterval);
+    readTimeOnTime(date, timerSettings.readTimeInterval);
   }, 1000);
 
   const timerIntervalRangeLabelMessage =
@@ -361,9 +361,9 @@ function timerIntervalRange() {
   currentSetInterval = setInterval(function () {
     const date = new Date();
     setDate(date, timerSettings.readTimeInterval);
-    readDate(date, timerSettings.readTimeInterval);
+    readDateOnTime(date, timerSettings.readTimeInterval);
     setTime(date, timerSettings.isHiddenPart5);
-    readTime(date, timerSettings.readTimeInterval);
+    readTimeOnTime(date, timerSettings.readTimeInterval);
   }, 1000);
 
   const timerIntervalRangeLabelMessage =
@@ -430,11 +430,29 @@ function setDate(date) {
   );
 }
 
-function readDate(date, readTimeInterval) {
+function readDateOnTime(date, readTimeInterval) {
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
   if (readTimeInterval === 0 || seconds !== 0 || minutes !== 0) return;
 
+  readDate();
+}
+
+function readDate() {
   const message = $("#dateA").html();
   readText(message);
+}
+
+function readTime() {
+  const messageContent = $("#timeA").html();
+  const messages = messageContent.split("/");
+
+  for (const message of messages) {
+    readText(message);
+  }
+}
+
+function readDateAndTime() {
+  readDate();
+  readTime();
 }
