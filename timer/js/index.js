@@ -458,10 +458,10 @@ function activate() {
     readTimeOnTime(date, timerSettings.readTimeInterval);
   }, 1000);
 
+  if (timerSettings.readTimeInterval === 0) timerSettings.readTimeInterval = 5;
+
   const timerIntervalRangeLabelMessage =
-    timerSettings.readTimeInterval === 0
-      ? "No me digas la hora"
-      : timerSettings.readTimeInterval === 1
+    timerSettings.readTimeInterval === 1
       ? "Dime la hora una vez cada minuto"
       : `Dime la hora una vez cada ${timerSettings.readTimeInterval} minutos`;
 
