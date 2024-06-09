@@ -282,7 +282,7 @@ function setTime(date, isHiddenPart5) {
         : `${message} / ${part1} ${part2} ${part4} ${part5}`
       : message;
   message =
-    part1m !== "" || ((hours === 0 || hours === 12) && minutes === 0)
+    part1m !== ""
       ? isHiddenPart5
         ? `${message} / ${part1m} ${part2m} ${part4m}`
         : `${message} / ${part1m} ${part2m} ${part4m} ${part5m}`
