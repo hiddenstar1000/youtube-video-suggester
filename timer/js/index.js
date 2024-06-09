@@ -324,7 +324,7 @@ function readText(message) {
 
 function init() {
   currentSetInterval = setInterval(function () {
-    const date = new Date();
+    const date = getDate();
     setDate(date, 0);
     readDateOnTime(date, 0);
     setTime(date, true);
@@ -345,7 +345,7 @@ function timerIntervalRange() {
   };
 
   currentSetInterval = setInterval(function () {
-    const date = new Date();
+    const date = getDate();
     setDate(date, timerSettings.readTimeInterval);
     readDateOnTime(date, timerSettings.readTimeInterval);
     setTime(date, timerSettings.isHiddenPart5);
@@ -448,7 +448,7 @@ function activate() {
   };
 
   currentSetInterval = setInterval(function () {
-    const date = new Date();
+    const date = getDate();
     setDate(date, timerSettings.readTimeInterval);
     readDateOnTime(date, timerSettings.readTimeInterval);
     setTime(date, timerSettings.isHiddenPart5);
@@ -469,4 +469,22 @@ function activate() {
   readTime();
 
   $("#activateButton").addClass("d-none");
+}
+
+function getDate() {
+  const date = new Date();
+  const testing = {
+    enable: false, // Set to true to test the timer
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  };
+
+  if (testing.enable) {
+    date.setHours(testing.hours);
+    date.setMinutes(testing.minutes);
+    date.setSeconds(testing.seconds);
+  }
+
+  return date;
 }
