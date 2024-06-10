@@ -218,8 +218,10 @@ function setTime(date, isHiddenPart5) {
       ? "menos cinco"
       : "";
   const part5 =
-    (hours === 0 || hours === 12) && minutes === 0
-      ? ""
+    hours === 0 && minutes === 0
+      ? "de la noche"
+      : hours === 12 && minutes === 0
+      ? "de la tarde"
       : hours === 0 ||
         hours === 1 ||
         hours === 2 ||
@@ -250,7 +252,9 @@ function setTime(date, isHiddenPart5) {
       ? "de la noche"
       : "";
   const part5m =
-    hours === 0 || hours === 1 || hours === 2 || hours === 3 || hours === 4
+    (hours === 0 || hours === 12) && minutes === 0
+      ? ""
+      : hours === 0 || hours === 1 || hours === 2 || hours === 3 || hours === 4
       ? "de la madrugada"
       : hours === 5 ||
         hours === 6 ||
