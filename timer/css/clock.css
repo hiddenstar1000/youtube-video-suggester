@@ -1,7 +1,7 @@
 /*Analog Clock Style */
 .container {
     position: relative;
-    background: #2f363e;
+    /* background: #2f363e; */
     border-radius: 20px;
     display: flex;
     justify-content: center;

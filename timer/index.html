@@ -34,43 +34,16 @@
           <h2 id="timeA"></h2>
         </div>
       </div>
+      <div class="row"></div>
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <label
-            for="timerIntervalRange"
-            class="form-label"
-            id="timerIntervalRangeLabel"
-          ></label>
-          <button type="button" class="btn btn-primary" id="activateButton">
-            Activar
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary d-none"
-            id="deactivateButton"
-            disabled
-          >
-            Desactivar
-          </button>
-          <input
-            type="range"
-            class="form-range"
-            min="0"
-            max="60"
-            step="5"
-            id="timerIntervalRange"
-          />
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <iframe
+            src="clock.html"
+            style="height: 600px; width: 100%"
+            title="Clock Widget"
+          ></iframe>
         </div>
-      </div>
-      <div class="row">
-        <iframe
-          src="clock.html"
-          style="height: 2000px; width: 100%"
-          title="Clock Widget"
-        ></iframe>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-8 col-md-8 col-sm-12">
           <img src="img/time-es.png" width="100%" />
         </div>
       </div>
