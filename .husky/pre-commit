@@ -1,10 +1,3 @@
-npm run build-css
-npm run build-js
-npm run build-css-ts
-npm run build-js-ts
-npm run build-css-ft
-npm run build-js-ft
-npm run build-css-tm
-npm run build-js-tm
+npm run build
 git add *.min.js
 git add *.min.css

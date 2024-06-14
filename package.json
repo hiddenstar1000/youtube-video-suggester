@@ -8,14 +8,17 @@
     "minify": "^11.0.1"
   },
   "scripts": {
-    "build-css": "minify css/index.css > css/index.min.css",
-    "build-js": "minify js/index.js > js/index.min.js",
+    "build-css-mn": "minify css/index.css > css/index.min.css",
+    "build-js-mn": "minify js/index.js > js/index.min.js",
     "build-css-ts": "minify tv-series/css/index.css > tv-series/css/index.min.css",
     "build-js-ts": "minify tv-series/js/index.js > tv-series/js/index.min.js",
     "build-css-ft": "minify fairy-tales/css/index.css > fairy-tales/css/index.min.css",
     "build-js-ft": "minify fairy-tales/js/index.js > fairy-tales/js/index.min.js",
-    "build-js-tm": "minify timer/js/index.js > timer/js/index.min.js",
-    "build-css-tm": "minify timer/css/index.css > timer/css/index.min.css",
+    "build-js-tm": "minify timer/js/index.js > timer/js/index.min.js && minify timer/js/clock.js > timer/js/clock.min.js",
+    "build-css-tm": "minify timer/css/index.css > timer/css/index.min.css && minify timer/css/clock.css > timer/css/clock.min.css",
+    "build-css": "npm run build-css-mn && npm run build-css-ts && npm run build-css-ft && npm run build-css-tm",
+    "build-js": "npm run build-js-mn && npm run build-js-ts && npm run build-js-ft && npm run build-js-tm",
+    "build": "npm run build-css && npm run build-js",
     "prepare": "husky"
   },
   "repository": {
