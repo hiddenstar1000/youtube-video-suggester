@@ -219,9 +219,9 @@ function setTime(date, isHiddenPart5) {
       : "";
   const part5 =
     hours === 0 && minutes === 0
-      ? "de la noche"
+      ? "de la madrugada"
       : hours === 12 && minutes === 0
-      ? "de la tarde"
+      ? "del mediodía"
       : hours === 0 ||
         hours === 1 ||
         hours === 2 ||
@@ -263,8 +263,9 @@ function setTime(date, isHiddenPart5) {
         hours === 9 ||
         hours === 10
       ? "de la mañana"
-      : hours === 11 ||
-        hours === 12 ||
+      : hours === 11
+      ? "del mediodía"
+      : hours === 12 ||
         hours === 13 ||
         hours === 14 ||
         hours === 15 ||
@@ -275,9 +276,10 @@ function setTime(date, isHiddenPart5) {
         hours === 19 ||
         hours === 20 ||
         hours === 21 ||
-        hours === 22 ||
-        hours === 23
+        hours === 22
       ? "de la noche"
+      : hours === 23
+      ? "de la madrugada"
       : "";
 
   let message = isHiddenPart5
@@ -484,7 +486,7 @@ function activate() {
 function getDate() {
   const date = new Date();
   const testing = {
-    enable: false, // Set to true to test the timer
+    enable: true, // Set to true to test the timer
     hours: 0,
     minutes: 0,
     seconds: 0,
