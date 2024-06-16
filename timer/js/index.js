@@ -486,7 +486,7 @@ function activate() {
 function getDate() {
   const date = new Date();
   const testing = {
-    enable: true, // Set to true to test the timer
+    enable: false, // Set to true to test the timer
     hours: 0,
     minutes: 0,
     seconds: 0,
