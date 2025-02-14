@@ -61,11 +61,11 @@ $(document).ready(function () {
 
 function init() {
   const languages = JSON.parse(localStorage.getItem("languagesMc")) || {
-    english: true,
+    english: false,
     hindi: true,
-    japanese: true,
+    japanese: false,
     spanish: true,
-    russian: true,
+    russian: false,
   };
 
   $("#english").prop("checked", languages.english);
@@ -218,12 +218,37 @@ function loadData() {
     },
   ];
 
-  // Channel: https://www.youtube.com/@romanticamusicaoficial
+  // Channel: https://www.youtube.com/@NewHindiMashupSongs918
 
   const hindiData = [
     {
+      name: "💚 Best Mashup NonStop Love of Arijit Singh, Jubin Nautiyal, Atif Aslam Neha Kakkar#010",
       contentDetails: {
-        videoId: "dE4xDQbS-9c",
+        videoId: "zkpRDb6giYE",
+      },
+    },
+    {
+      name: "💚 Best Mashup NonStop Love of Arijit Singh, Jubin Nautiyal, Atif Aslam Neha Kakkar#010",
+      contentDetails: {
+        videoId: "nyJjqAHRJYk",
+      },
+    },
+    {
+      name: "💚ROMANTIC HINDI LOVE MASHUP 2025 🧡 Best Mashup of Arijit Singh, Jubin Nautiyal, Atif Aslam#010",
+      contentDetails: {
+        videoId: "1BlTjeczmjY",
+      },
+    },
+    {
+      name: "Trending Love Mashup 2024 Best Mashup of Arijit Singh, Jubin Nautiyal, Atif Aslam#010#010",
+      contentDetails: {
+        videoId: "3kSW2ZaLMQQ",
+      },
+    },
+    {
+      name: "💚 Best Mashup NonStop Love of Arijit Singh, Jubin Nautiyal, Atif Aslam Neha Kakkar#010",
+      contentDetails: {
+        videoId: "qxB-bUaekms",
       },
     },
   ];
