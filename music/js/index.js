@@ -222,30 +222,35 @@ function loadData() {
 
   const hindiData = [
     {
+      id: 1,
       name: "💚 Best Mashup NonStop Love of Arijit Singh, Jubin Nautiyal, Atif Aslam Neha Kakkar#010",
       contentDetails: {
         videoId: "zkpRDb6giYE",
       },
     },
     {
+      id: 2,
       name: "💚 Best Mashup NonStop Love of Arijit Singh, Jubin Nautiyal, Atif Aslam Neha Kakkar#010",
       contentDetails: {
         videoId: "nyJjqAHRJYk",
       },
     },
     {
+      id: 3,
       name: "💚ROMANTIC HINDI LOVE MASHUP 2025 🧡 Best Mashup of Arijit Singh, Jubin Nautiyal, Atif Aslam#010",
       contentDetails: {
         videoId: "1BlTjeczmjY",
       },
     },
     {
+      id: 4,
       name: "Trending Love Mashup 2024 Best Mashup of Arijit Singh, Jubin Nautiyal, Atif Aslam#010#010",
       contentDetails: {
         videoId: "3kSW2ZaLMQQ",
       },
     },
     {
+      id: 5,
       name: "💚 Best Mashup NonStop Love of Arijit Singh, Jubin Nautiyal, Atif Aslam Neha Kakkar#010",
       contentDetails: {
         videoId: "qxB-bUaekms",
@@ -267,33 +272,73 @@ function loadData() {
 
   const spanishData = [
     {
+      id: 1,
       name: "Fiesta Latina Mix 2024 - Maluma, Shakira, Daddy Yankee, Wisin, Nicky Jam - Pop Latino Reggaeton",
       contentDetails: {
         videoId: "dE4xDQbS-9c",
       },
     },
     {
+      id: 2,
       name: "Fiesta Latina Mix 2024 - Maluma, Shakira, Daddy Yankee, Wisin, Nicky Jam - Pop Latino Reggaeton",
       contentDetails: {
         videoId: "T1LTNaRQH44",
       },
     },
     {
+      id: 3,
       name: "Fiesta Latina Mix 2023 - Maluma, Shakira, Daddy Yankee, Wisin, Nicky Jam - Pop Latino Reggaeton",
       contentDetails: {
         videoId: "t86S1O_NqKE",
       },
     },
     {
+      id: 4,
       name: "Luis Fonsi, Sebastian Yatra, Nacho, Wisin, Daddy Yankee, Maluma, CNCO, Karol G 🎉 Pop Latino 2024 🎉",
       contentDetails: {
         videoId: "HxTfCnmQGWw",
       },
     },
     {
+      id: 5,
       name: "Sebastián Yatra, Manuel Turizo, Maluma, KAROL G, Shakira, Luis Fonsi, Enrique Iglesias, J Balvin,...",
       contentDetails: {
         videoId: "JrqOrB5hUvQ",
+      },
+    },
+    {
+      id: 6,
+      name: "Fiesta Latina Mix 2023 - Maluma, Shakira, Daddy Yankee, Wisin, Nicky Jam - Pop Latino Reggaeton",
+      contentDetails: {
+        videoId: "E4VfcZvq7yE",
+      },
+    },
+    {
+      id: 7,
+      name: "Fiesta Latina Mix 2023 - Maluma, Shakira, Daddy Yankee, Wisin, Nicky Jam - Pop Latino Reggaeton",
+      contentDetails: {
+        videoId: "nA0oFHJp2WI",
+      },
+    },
+    {
+      id: 8,
+      name: "Fiesta Latina Mix 2023 - Maluma, Shakira, Daddy Yankee, Wisin, Nicky Jam - Pop Latino Reggaeton",
+      contentDetails: {
+        videoId: "mJIioGNqWuI",
+      },
+    },
+    {
+      id: 9,
+      name: "Shakira, Karol G, Feid, Luis Fonsi, Sebastian Yatra, Nacho, Daddy Yankee, Maluma Pop Latino 2023",
+      contentDetails: {
+        videoId: "tI2UteWu1xo",
+      },
+    },
+    {
+      id: 10,
+      name: "Luis Fonsi, Sebastian Yatra, Nacho, Wisin, Daddy Yankee, Maluma, CNCO, Karol G 🎉 Pop Latino 2024 🎉",
+      contentDetails: {
+        videoId: "iAws8jRjVc",
       },
     },
   ];
