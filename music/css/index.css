@@ -24,3 +24,16 @@ body {
 .dx-pointer {
   cursor: pointer !important;
 } 
+
+.navbar-nav {
+  background-color: grey;
+}
+
+.nav-link {
+  color: white !important;
+  padding-left: 10px;
+}
+
+.active {
+  background-color: black;
+}
