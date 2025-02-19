@@ -341,6 +341,41 @@ function loadData() {
         videoId: "iAws8jRjVc",
       },
     },
+    {
+      id: 11,
+      name: "Fiesta Latina Mix 2023 - Maluma, Shakira, Daddy Yankee, Wisin, Nicky Jam - Pop Latino Reggaeton",
+      contentDetails: {
+        videoId: "SzfOK9sFsVs",
+      },
+    },
+    {
+      id: 12,
+      name: "Sebastián Yatra, Manuel Turizo, Maluma, KAROL G, Shakira, Luis Fonsi, Enrique Iglesias, J Balvin,..",
+      contentDetails: {
+        videoId: "fMUs7D_ixYc",
+      },
+    },
+    {
+      id: 13,
+      name: "Luis Fonsi, Sebastian Yatra, Nacho, Wisin, Daddy Yankee, Maluma, CNCO, Karol G 🎉 Pop Latino 2024 🎉",
+      contentDetails: {
+        videoId: "t2l4LaIPe-g",
+      },
+    },
+    {
+      id: 14,
+      name: "Shakira, Karol G, Feid, Luis Fonsi, Sebastian Yatra, Nacho, Daddy Yankee, Maluma Pop Latino 2023",
+      contentDetails: {
+        videoId: "yHsFsjRFXp8",
+      },
+    },
+    {
+      id: 15,
+      name: "Shakira, Karol G, Feid, Luis Fonsi, Sebastian Yatra, Nacho, Daddy Yankee, Maluma Pop Latino 2023",
+      contentDetails: {
+        videoId: "xYMKNa4fp5Q",
+      },
+    },
   ];
 
   // Channel: https://www.youtube.com/@romanticamusicaoficial
