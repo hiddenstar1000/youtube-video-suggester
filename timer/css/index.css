@@ -5,3 +5,16 @@ body {
   .container {
     background-color: #557cd2;
   }
+
+  .navbar-nav {
+    background-color: grey;
+  }
+
+  .nav-link {
+    color: white !important;
+    padding-left: 10px;
+  }
+
+  .active {
+    background-color: black;
+  }
