@@ -11,6 +11,7 @@ function init() {
       population: "132,500,000",
       currency: "Mexican Peso (MXN)",
       knownFor: "Tacos, mariachi, and ancient pyramids",
+      timeZoneString: "America/Mexico_City",
     },
     {
       name: "Colombia",
@@ -19,6 +20,7 @@ function init() {
       population: "52,700,000",
       currency: "Colombian Peso (COP)",
       knownFor: "Coffee, biodiversity, and Shakira",
+      timeZoneString: "America/Bogota",
     },
     {
       name: "Spain",
@@ -27,6 +29,7 @@ function init() {
       population: "48,000,000",
       currency: "Euro (EUR)",
       knownFor: "Flamenco, paella, and rich history",
+      timeZoneString: "Europe/Madrid",
     },
     {
       name: "Argentina",
@@ -35,6 +38,7 @@ function init() {
       population: "46,000,000",
       currency: "Argentine Peso (ARS)",
       knownFor: "Tango, beef, and soccer legends (Messi & Maradona)",
+      timeZoneString: "America/Argentina/Buenos_Aires",
     },
     {
       name: "Peru",
@@ -43,6 +47,7 @@ function init() {
       population: "34,352,720",
       currency: "Peruvian Sol (PEN)",
       knownFor: "Machu Picchu, llamas, and ceviche",
+      timeZoneString: "America/Lima",
     },
     {
       name: "Venezuela",
@@ -51,6 +56,7 @@ function init() {
       population: "32,605,423",
       currency: "Venezuelan Bolívar (VES) (high inflation)",
       knownFor: "Angel Falls, oil reserves, and arepas",
+      timeZoneString: "America/Caracas",
     },
     {
       name: "Chile",
@@ -59,6 +65,7 @@ function init() {
       population: "19,629,588",
       currency: "Chilean Peso (CLP)",
       knownFor: "Patagonia, wine, and the Atacama Desert",
+      timeZoneString: "America/Santiago",
     },
     {
       name: "Guatemala",
@@ -67,6 +74,7 @@ function init() {
       population: "17,980,803",
       currency: "Guatemalan Quetzal (GTQ)",
       knownFor: "Mayan ruins like Tikal and colorful markets",
+      timeZoneString: "America/Guatemala",
     },
     {
       name: "Ecuador",
@@ -75,6 +83,7 @@ function init() {
       population: "17,483,326",
       currency: "United States Dollar (USD)",
       knownFor: "Galápagos Islands and the Equator monument",
+      timeZoneString: "America/Guayaquil",
     },
     {
       name: "Bolivia",
@@ -83,6 +92,7 @@ function init() {
       population: "12,186,079",
       currency: "Boliviano (BOB)",
       knownFor: "Uyuni Salt Flats, Lake Titicaca, and high-altitude cities",
+      timeZoneString: "America/La_Paz",
     },
     {
       name: "Dominican Republic",
@@ -91,6 +101,7 @@ function init() {
       population: "11,434,005",
       currency: "Dominican Peso (DOP)",
       knownFor: "Merengue, bachata, and stunning beaches",
+      timeZoneString: "America/Santo_Domingo",
     },
     {
       name: "Cuba",
@@ -99,6 +110,7 @@ function init() {
       population: "11,089,511",
       currency: "Cuban Peso (CUP), Convertible Peso (previously CUC)",
       knownFor: "Cigars, salsa music, and classic cars",
+      timeZoneString: "America/Havana",
     },
     {
       name: "Honduras",
@@ -107,6 +119,7 @@ function init() {
       population: "9,571,352",
       currency: "Honduran Lempira (HNL)",
       knownFor: "Coral reefs and Mayan ruins (Copán)",
+      timeZoneString: "America/Tegucigalpa",
     },
     {
       name: "Puerto Rico",
@@ -116,6 +129,7 @@ function init() {
       population: "9,110,869",
       currency: "United States Dollar (USD)",
       knownFor: "Reggaeton, El Yunque rainforest, and beaches",
+      timeZoneString: "America/Puerto_Rico",
     },
     {
       name: "El Salvador",
@@ -124,6 +138,7 @@ function init() {
       population: "6,602,370",
       currency: "United States Dollar (USD) and Bitcoin (BTC) (legal tender)",
       knownFor: "Pupusas (stuffed tortillas) and volcanic landscapes",
+      timeZoneString: "America/El_Salvador",
     },
     {
       name: "Nicaragua",
@@ -132,6 +147,7 @@ function init() {
       population: "6,359,689",
       currency: "Nicaraguan Córdoba (NIO)",
       knownFor: "Volcanoes, colonial cities, and Lake Nicaragua",
+      timeZoneString: "America/Managua",
     },
     {
       name: "Paraguay",
@@ -140,6 +156,7 @@ function init() {
       population: "6,218,879",
       currency: "Paraguayan Guaraní (PYG)",
       knownFor: "Guarani culture and traditional tereré (cold mate tea)",
+      timeZoneString: "America/Asuncion",
     },
     {
       name: "Costa Rica",
@@ -148,6 +165,7 @@ function init() {
       population: "5,044,197",
       currency: "Costa Rican Colón (CRC)",
       knownFor: "Eco-tourism, beaches, and rainforests",
+      timeZoneString: "America/Costa_Rica",
     },
     {
       name: "Panama",
@@ -156,6 +174,7 @@ function init() {
       population: "4,337,768",
       currency: "Balboa (PAB) & United States Dollar (USD)",
       knownFor: "Panama Canal and biodiversity",
+      timeZoneString: "America/Panama",
     },
     {
       name: "Uruguay",
@@ -164,6 +183,7 @@ function init() {
       population: "3,444,263",
       currency: "Uruguayan Peso (UYU)",
       knownFor: "High quality of life, beaches, and mate tea",
+      timeZoneString: "America/Montevideo",
     },
     {
       name: "Equatorial Guinea",
@@ -172,6 +192,7 @@ function init() {
       population: "1,454,789",
       currency: "Central African CFA Franc (XAF)",
       knownFor: "Oil production and Spanish colonial influence",
+      timeZoneString: "Africa/Malabo",
     },
   ];
 
@@ -181,7 +202,15 @@ function init() {
       `<li id="dx-ssc-name-${country.shortCode}" class="dx-ssc-name" style="cursor: pointer;"><object data="img/flags/4x3/${country.shortCode}.svg" type="image/svg+xml" style="width: 20px;"></object> <b>${country.name}</b></li>`
     );
     li.append(
-      `<p id="dx-ssc-info-${country.shortCode}" class="dx-ssc-info d-none"><b>Capital:</b> ${country.capital}<br><b>Population:</b> ${country.population}<br><b>Currency:</b> ${country.currency}<br><b>Known For:</b> ${country.knownFor}</p>`
+      `<p id="dx-ssc-info-${
+        country.shortCode
+      }" class="dx-ssc-info d-none"><b>Capital:</b> ${
+        country.capital
+      }<br><b>Population:</b> ${country.population}<br><b>Currency:</b> ${
+        country.currency
+      }<br><b>Current Time:</b> ${new Date().toLocaleString("en-US", {
+        timeZone: country.timeZoneString,
+      })}<br><b>Known For:</b> ${country.knownFor}</p>`
     );
     sscList.append(li);
   });
