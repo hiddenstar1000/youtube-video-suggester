@@ -225,4 +225,9 @@ function updateTime() {
     });
     $(`#dx-ssc-time-${country.shortCode}`).html(currentTime);
   });
+
+  const currentTime = new Date().toLocaleString("en-US", {
+    timeZone: "Asia/Colombo",
+  });
+  $(`#dx-ssc-time-lk`).html(currentTime);
 }
