@@ -7,6 +7,8 @@ const spanishSpeakingCountries = [
     currency: "Mexican Peso (MXN)",
     knownFor: "Tacos, mariachi, and ancient pyramids",
     timeZoneString: "America/Mexico_City",
+    nationalAnthem: "Himno Nacional Mexicano",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=Q8T9g7memUk",
   },
   {
     name: "Colombia",
@@ -16,6 +18,8 @@ const spanishSpeakingCountries = [
     currency: "Colombian Peso (COP)",
     knownFor: "Coffee, biodiversity, and Shakira",
     timeZoneString: "America/Bogota",
+    nationalAnthem: "Himno Nacional Colombiano",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=yPSL78YDyZY",
   },
   {
     name: "Spain",
@@ -25,6 +29,8 @@ const spanishSpeakingCountries = [
     currency: "Euro (EUR)",
     knownFor: "Flamenco, paella, and rich history",
     timeZoneString: "Europe/Madrid",
+    nationalAnthem: "Himno Nacional Español",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=Ue4p3CoNjv0",
   },
   {
     name: "Argentina",
@@ -34,6 +40,8 @@ const spanishSpeakingCountries = [
     currency: "Argentine Peso (ARS)",
     knownFor: "Tango, beef, and soccer legends (Messi & Maradona)",
     timeZoneString: "America/Argentina/Buenos_Aires",
+    nationalAnthem: "Himno Nacional Argentino",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=yqBC3l7i7dk",
   },
   {
     name: "Peru",
@@ -43,6 +51,8 @@ const spanishSpeakingCountries = [
     currency: "Peruvian Sol (PEN)",
     knownFor: "Machu Picchu, llamas, and ceviche",
     timeZoneString: "America/Lima",
+    nationalAnthem: "Himno Nacional Peruano",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=4NIUhpCaUIU",
   },
   {
     name: "Venezuela",
@@ -52,6 +62,8 @@ const spanishSpeakingCountries = [
     currency: "Venezuelan Bolívar (VES) (high inflation)",
     knownFor: "Angel Falls, oil reserves, and arepas",
     timeZoneString: "America/Caracas",
+    nationalAnthem: "Himno Nacional Venezolano",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=W2YtFykr8CM",
   },
   {
     name: "Chile",
@@ -61,6 +73,8 @@ const spanishSpeakingCountries = [
     currency: "Chilean Peso (CLP)",
     knownFor: "Patagonia, wine, and the Atacama Desert",
     timeZoneString: "America/Santiago",
+    nationalAnthem: "Himno Nacional Chileno",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=f9IeLVWFOS0",
   },
   {
     name: "Guatemala",
@@ -70,6 +84,8 @@ const spanishSpeakingCountries = [
     currency: "Guatemalan Quetzal (GTQ)",
     knownFor: "Mayan ruins like Tikal and colorful markets",
     timeZoneString: "America/Guatemala",
+    nationalAnthem: "Himno Nacional Guatemalteco",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=fHKnuWxgI9w",
   },
   {
     name: "Ecuador",
@@ -79,6 +95,8 @@ const spanishSpeakingCountries = [
     currency: "United States Dollar (USD)",
     knownFor: "Galápagos Islands and the Equator monument",
     timeZoneString: "America/Guayaquil",
+    nationalAnthem: "Himno Nacional Ecuatoriano",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=POE_fHCCzxU",
   },
   {
     name: "Bolivia",
@@ -88,6 +106,8 @@ const spanishSpeakingCountries = [
     currency: "Boliviano (BOB)",
     knownFor: "Uyuni Salt Flats, Lake Titicaca, and high-altitude cities",
     timeZoneString: "America/La_Paz",
+    nationalAnthem: "Himno Nacional Boliviano",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=biWph53e7N4",
   },
   {
     name: "Dominican Republic",
@@ -97,6 +117,8 @@ const spanishSpeakingCountries = [
     currency: "Dominican Peso (DOP)",
     knownFor: "Merengue, bachata, and stunning beaches",
     timeZoneString: "America/Santo_Domingo",
+    nationalAnthem: "Himno Nacional Dominicano",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=4ULeDsRcWyk",
   },
   {
     name: "Cuba",
@@ -106,6 +128,8 @@ const spanishSpeakingCountries = [
     currency: "Cuban Peso (CUP), Convertible Peso (previously CUC)",
     knownFor: "Cigars, salsa music, and classic cars",
     timeZoneString: "America/Havana",
+    nationalAnthem: "Himno Nacional Cubano",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=m_iXh_iwrwA",
   },
   {
     name: "Honduras",
@@ -115,6 +139,8 @@ const spanishSpeakingCountries = [
     currency: "Honduran Lempira (HNL)",
     knownFor: "Coral reefs and Mayan ruins (Copán)",
     timeZoneString: "America/Tegucigalpa",
+    nationalAnthem: "Himno Nacional Hondureño",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=tTuucJhx_iA",
   },
   {
     name: "Puerto Rico",
@@ -125,6 +151,8 @@ const spanishSpeakingCountries = [
     currency: "United States Dollar (USD)",
     knownFor: "Reggaeton, El Yunque rainforest, and beaches",
     timeZoneString: "America/Puerto_Rico",
+    nationalAnthem: "Himno Nacional Puertorriqueño",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=vIEU-qKsqek",
   },
   {
     name: "El Salvador",
@@ -134,6 +162,8 @@ const spanishSpeakingCountries = [
     currency: "United States Dollar (USD) and Bitcoin (BTC) (legal tender)",
     knownFor: "Pupusas (stuffed tortillas) and volcanic landscapes",
     timeZoneString: "America/El_Salvador",
+    nationalAnthem: "Himno Nacional Salvadoreño",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=LqVWPM-S3gc",
   },
   {
     name: "Nicaragua",
@@ -143,6 +173,8 @@ const spanishSpeakingCountries = [
     currency: "Nicaraguan Córdoba (NIO)",
     knownFor: "Volcanoes, colonial cities, and Lake Nicaragua",
     timeZoneString: "America/Managua",
+    nationalAnthem: "Himno Nacional Nicaragüense",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=J3C4dwc9vRw",
   },
   {
     name: "Paraguay",
@@ -152,6 +184,8 @@ const spanishSpeakingCountries = [
     currency: "Paraguayan Guaraní (PYG)",
     knownFor: "Guarani culture and traditional tereré (cold mate tea)",
     timeZoneString: "America/Asuncion",
+    nationalAnthem: "Himno Nacional Paraguayo",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=jKiBSoRRbi4",
   },
   {
     name: "Costa Rica",
@@ -161,6 +195,8 @@ const spanishSpeakingCountries = [
     currency: "Costa Rican Colón (CRC)",
     knownFor: "Eco-tourism, beaches, and rainforests",
     timeZoneString: "America/Costa_Rica",
+    nationalAnthem: "Himno Nacional Costarricense",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=tdPULEgeFi0",
   },
   {
     name: "Panama",
@@ -170,6 +206,8 @@ const spanishSpeakingCountries = [
     currency: "Balboa (PAB) & United States Dollar (USD)",
     knownFor: "Panama Canal and biodiversity",
     timeZoneString: "America/Panama",
+    nationalAnthem: "Himno Nacional Panameño",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=q98udmYA1u0",
   },
   {
     name: "Uruguay",
@@ -179,6 +217,8 @@ const spanishSpeakingCountries = [
     currency: "Uruguayan Peso (UYU)",
     knownFor: "High quality of life, beaches, and mate tea",
     timeZoneString: "America/Montevideo",
+    nationalAnthem: "Himno Nacional Uruguayo",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=jc6L_0NZlqk",
   },
   {
     name: "Equatorial Guinea",
@@ -188,6 +228,8 @@ const spanishSpeakingCountries = [
     currency: "Central African CFA Franc (XAF)",
     knownFor: "Oil production and Spanish colonial influence",
     timeZoneString: "Africa/Malabo",
+    nationalAnthem: "Himno Nacional Guiné Equatorial",
+    nationalAnthemUrl: "https://www.youtube.com/watch?v=qLmAbyW3sFY",
   },
 ];
 
@@ -202,7 +244,7 @@ function init() {
       `<li id="dx-ssc-name-${country.shortCode}" class="dx-ssc-name" style="cursor: pointer;"><object data="img/flags/4x3/${country.shortCode}.svg" type="image/svg+xml" style="width: 20px;"></object> <b>${country.name}</b></li>`
     );
     li.append(
-      `<p id="dx-ssc-info-${country.shortCode}" class="dx-ssc-info d-none"><b>Capital:</b> ${country.capital}<br><b>Population:</b> ${country.population}<br><b>Currency:</b> ${country.currency}<br><b>Current Time:</b> <span id="dx-ssc-time-${country.shortCode}"></span><br><b>Known For:</b> ${country.knownFor}</p>`
+      `<p id="dx-ssc-info-${country.shortCode}" class="dx-ssc-info d-none"><b>Capital:</b> ${country.capital}<br><b>Population:</b> ${country.population}<br><b>Currency:</b> ${country.currency}<br><b>Current Time:</b> <span id="dx-ssc-time-${country.shortCode}"></span><br><b>Known For:</b> ${country.knownFor}<br><b>National Anthem:</b> <a href="${country.nationalAnthemUrl}" target="_blank">Link</a></p>`
     );
     sscList.append(li);
   });
