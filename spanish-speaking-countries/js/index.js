@@ -8,7 +8,7 @@ const spanishSpeakingCountries = [
     knownFor: "Tacos, mariachi, and ancient pyramids",
     timeZoneString: "America/Mexico_City",
     nationalAnthem: "Himno Nacional Mexicano",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=Q8T9g7memUk",
+    nationalAnthemUrl: "https://www.youtube.com/embed/Q8T9g7memUk",
   },
   {
     name: "Colombia",
@@ -19,7 +19,7 @@ const spanishSpeakingCountries = [
     knownFor: "Coffee, biodiversity, and Shakira",
     timeZoneString: "America/Bogota",
     nationalAnthem: "Himno Nacional Colombiano",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=yPSL78YDyZY",
+    nationalAnthemUrl: "https://www.youtube.com/embed/yPSL78YDyZY",
   },
   {
     name: "Spain",
@@ -30,7 +30,7 @@ const spanishSpeakingCountries = [
     knownFor: "Flamenco, paella, and rich history",
     timeZoneString: "Europe/Madrid",
     nationalAnthem: "Himno Nacional Español",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=Ue4p3CoNjv0",
+    nationalAnthemUrl: "https://www.youtube.com/embed/Ue4p3CoNjv0",
   },
   {
     name: "Argentina",
@@ -41,7 +41,7 @@ const spanishSpeakingCountries = [
     knownFor: "Tango, beef, and soccer legends (Messi & Maradona)",
     timeZoneString: "America/Argentina/Buenos_Aires",
     nationalAnthem: "Himno Nacional Argentino",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=yqBC3l7i7dk",
+    nationalAnthemUrl: "https://www.youtube.com/embed/ezpqn_Fwqyk",
   },
   {
     name: "Peru",
@@ -52,7 +52,7 @@ const spanishSpeakingCountries = [
     knownFor: "Machu Picchu, llamas, and ceviche",
     timeZoneString: "America/Lima",
     nationalAnthem: "Himno Nacional Peruano",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=4NIUhpCaUIU",
+    nationalAnthemUrl: "https://www.youtube.com/embed/4NIUhpCaUIU",
   },
   {
     name: "Venezuela",
@@ -63,7 +63,7 @@ const spanishSpeakingCountries = [
     knownFor: "Angel Falls, oil reserves, and arepas",
     timeZoneString: "America/Caracas",
     nationalAnthem: "Himno Nacional Venezolano",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=W2YtFykr8CM",
+    nationalAnthemUrl: "https://www.youtube.com/embed/W2YtFykr8CM",
   },
   {
     name: "Chile",
@@ -74,7 +74,7 @@ const spanishSpeakingCountries = [
     knownFor: "Patagonia, wine, and the Atacama Desert",
     timeZoneString: "America/Santiago",
     nationalAnthem: "Himno Nacional Chileno",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=f9IeLVWFOS0",
+    nationalAnthemUrl: "https://www.youtube.com/embed/f9IeLVWFOS0",
   },
   {
     name: "Guatemala",
@@ -85,7 +85,7 @@ const spanishSpeakingCountries = [
     knownFor: "Mayan ruins like Tikal and colorful markets",
     timeZoneString: "America/Guatemala",
     nationalAnthem: "Himno Nacional Guatemalteco",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=fHKnuWxgI9w",
+    nationalAnthemUrl: "https://www.youtube.com/embed/fHKnuWxgI9w",
   },
   {
     name: "Ecuador",
@@ -96,7 +96,7 @@ const spanishSpeakingCountries = [
     knownFor: "Galápagos Islands and the Equator monument",
     timeZoneString: "America/Guayaquil",
     nationalAnthem: "Himno Nacional Ecuatoriano",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=POE_fHCCzxU",
+    nationalAnthemUrl: "https://www.youtube.com/embed/POE_fHCCzxU",
   },
   {
     name: "Bolivia",
@@ -107,7 +107,7 @@ const spanishSpeakingCountries = [
     knownFor: "Uyuni Salt Flats, Lake Titicaca, and high-altitude cities",
     timeZoneString: "America/La_Paz",
     nationalAnthem: "Himno Nacional Boliviano",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=biWph53e7N4",
+    nationalAnthemUrl: "https://www.youtube.com/embed/biWph53e7N4",
   },
   {
     name: "Dominican Republic",
@@ -118,7 +118,7 @@ const spanishSpeakingCountries = [
     knownFor: "Merengue, bachata, and stunning beaches",
     timeZoneString: "America/Santo_Domingo",
     nationalAnthem: "Himno Nacional Dominicano",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=4ULeDsRcWyk",
+    nationalAnthemUrl: "https://www.youtube.com/embed/4ULeDsRcWyk",
   },
   {
     name: "Cuba",
@@ -129,7 +129,7 @@ const spanishSpeakingCountries = [
     knownFor: "Cigars, salsa music, and classic cars",
     timeZoneString: "America/Havana",
     nationalAnthem: "Himno Nacional Cubano",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=m_iXh_iwrwA",
+    nationalAnthemUrl: "https://www.youtube.com/embed/m_iXh_iwrwA",
   },
   {
     name: "Honduras",
@@ -140,7 +140,7 @@ const spanishSpeakingCountries = [
     knownFor: "Coral reefs and Mayan ruins (Copán)",
     timeZoneString: "America/Tegucigalpa",
     nationalAnthem: "Himno Nacional Hondureño",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=tTuucJhx_iA",
+    nationalAnthemUrl: "https://www.youtube.com/embed/tTuucJhx_iA",
   },
   {
     name: "Puerto Rico",
@@ -152,7 +152,7 @@ const spanishSpeakingCountries = [
     knownFor: "Reggaeton, El Yunque rainforest, and beaches",
     timeZoneString: "America/Puerto_Rico",
     nationalAnthem: "Himno Nacional Puertorriqueño",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=vIEU-qKsqek",
+    nationalAnthemUrl: "https://www.youtube.com/embed/vIEU-qKsqek",
   },
   {
     name: "El Salvador",
@@ -163,7 +163,7 @@ const spanishSpeakingCountries = [
     knownFor: "Pupusas (stuffed tortillas) and volcanic landscapes",
     timeZoneString: "America/El_Salvador",
     nationalAnthem: "Himno Nacional Salvadoreño",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=LqVWPM-S3gc",
+    nationalAnthemUrl: "https://www.youtube.com/embed/LqVWPM-S3gc",
   },
   {
     name: "Nicaragua",
@@ -174,7 +174,7 @@ const spanishSpeakingCountries = [
     knownFor: "Volcanoes, colonial cities, and Lake Nicaragua",
     timeZoneString: "America/Managua",
     nationalAnthem: "Himno Nacional Nicaragüense",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=J3C4dwc9vRw",
+    nationalAnthemUrl: "https://www.youtube.com/embed/J3C4dwc9vRw",
   },
   {
     name: "Paraguay",
@@ -185,7 +185,7 @@ const spanishSpeakingCountries = [
     knownFor: "Guarani culture and traditional tereré (cold mate tea)",
     timeZoneString: "America/Asuncion",
     nationalAnthem: "Himno Nacional Paraguayo",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=jKiBSoRRbi4",
+    nationalAnthemUrl: "https://www.youtube.com/embed/jKiBSoRRbi4",
   },
   {
     name: "Costa Rica",
@@ -196,7 +196,7 @@ const spanishSpeakingCountries = [
     knownFor: "Eco-tourism, beaches, and rainforests",
     timeZoneString: "America/Costa_Rica",
     nationalAnthem: "Himno Nacional Costarricense",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=tdPULEgeFi0",
+    nationalAnthemUrl: "https://www.youtube.com/embed/tdPULEgeFi0",
   },
   {
     name: "Panama",
@@ -207,7 +207,7 @@ const spanishSpeakingCountries = [
     knownFor: "Panama Canal and biodiversity",
     timeZoneString: "America/Panama",
     nationalAnthem: "Himno Nacional Panameño",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=q98udmYA1u0",
+    nationalAnthemUrl: "https://www.youtube.com/embed/q98udmYA1u0",
   },
   {
     name: "Uruguay",
@@ -218,7 +218,7 @@ const spanishSpeakingCountries = [
     knownFor: "High quality of life, beaches, and mate tea",
     timeZoneString: "America/Montevideo",
     nationalAnthem: "Himno Nacional Uruguayo",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=jc6L_0NZlqk",
+    nationalAnthemUrl: "https://www.youtube.com/embed/jc6L_0NZlqk",
   },
   {
     name: "Equatorial Guinea",
@@ -229,7 +229,7 @@ const spanishSpeakingCountries = [
     knownFor: "Oil production and Spanish colonial influence",
     timeZoneString: "Africa/Malabo",
     nationalAnthem: "Himno Nacional Guiné Equatorial",
-    nationalAnthemUrl: "https://www.youtube.com/watch?v=qLmAbyW3sFY",
+    nationalAnthemUrl: "https://www.youtube.com/embed/qLmAbyW3sFY",
   },
 ];
 
@@ -244,7 +244,7 @@ function init() {
       `<li id="dx-ssc-name-${country.shortCode}" class="dx-ssc-name" style="cursor: pointer;"><object data="img/flags/4x3/${country.shortCode}.svg" type="image/svg+xml" style="width: 20px;"></object> <b>${country.name}</b></li>`
     );
     li.append(
-      `<p id="dx-ssc-info-${country.shortCode}" class="dx-ssc-info d-none"><b>Capital:</b> ${country.capital}<br><b>Population:</b> ${country.population}<br><b>Currency:</b> ${country.currency}<br><b>Current Time:</b> <span id="dx-ssc-time-${country.shortCode}"></span><br><b>Known For:</b> ${country.knownFor}<br><b>National Anthem:</b> <a href="${country.nationalAnthemUrl}" target="_blank">Link</a></p>`
+      `<p id="dx-ssc-info-${country.shortCode}" class="dx-ssc-info d-none"><b>Capital:</b> ${country.capital}<br><b>Population:</b> ${country.population}<br><b>Currency:</b> ${country.currency}<br><b>Current Time:</b> <span id="dx-ssc-time-${country.shortCode}"></span><br><b>Known For:</b> ${country.knownFor}<br><b>National Anthem:</b> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nationalAnthemModal">Play</button></p>`
     );
     sscList.append(li);
   });
@@ -258,6 +258,15 @@ function showDetails() {
   const selector = `#dx-ssc-info-${countryCode}`;
   $(".dx-ssc-info").addClass("d-none");
   $(selector).removeClass("d-none");
+
+  const matchingCountries = spanishSpeakingCountries.filter(
+    (country) => country.shortCode === countryCode
+  );
+
+  if (matchingCountries.length > 0) {
+    $("#videoIframe").attr("src", matchingCountries[0].nationalAnthemUrl);
+    $("#nationalAnthemModalLabel").html(matchingCountries[0].nationalAnthem);
+  }
 }
 
 function updateTime() {
